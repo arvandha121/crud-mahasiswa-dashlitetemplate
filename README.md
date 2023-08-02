@@ -25,6 +25,8 @@
 # Administration
 ![image](https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/8de78337-2d97-4809-93aa-239be1cab47f)
 
+# Video Demo
+https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/223b778b-bf8d-4423-8176-528dcc8670b3
 
 ## License
 
