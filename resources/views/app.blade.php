@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mahasiswa</title>
 
-    <link id="skin-default" rel="stylesheet" href="{{ asset('/css/dashlite.css?ver=3.2.0') }}">
-    <link id="skin-default" rel="stylesheet" href="{{ asset('/css/theme.css?ver=3.2.0') }}">
+    <link id="skin-default" rel="stylesheet" href="/css/dashlite.css?ver=3.2.0">
+    <link id="skin-default" rel="stylesheet" href="/public/css/theme.css?ver=3.2.0">
+    {{-- <link id="skin-default" rel="stylesheet" href="{{ asset('/css/dashlite.css?ver=3.2.0') }}">
+    <link id="skin-default" rel="stylesheet" href="{{ asset('/css/theme.css?ver=3.2.0') }}"> --}}
 
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="{{ asset('/images') }}">
@@ -17,7 +19,8 @@
     <link rel="stylesheet" href="/path/to/cdn/font-awesome.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}"> --}}
 
     {{-- css bootstrap --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -171,8 +174,10 @@
         </div>
 
         <!-- JavaScript -->
-        <script src="{{ asset('/js/bundle.js?ver=3.2.0') }}"></script>
-        <script src="{{ asset('/js/scripts.js?ver=3.2.0') }}"></script>
+        <script src="/js/bundle.js?ver=3.2.0"></script>
+        <script src="/js/scripts.js?ver=3.2.0'"></script>
+        {{-- <script src="{{ asset('/js/bundle.js?ver=3.2.0') }}"></script>
+        <script src="{{ asset('/js/scripts.js?ver=3.2.0') }}"></script> --}}
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
