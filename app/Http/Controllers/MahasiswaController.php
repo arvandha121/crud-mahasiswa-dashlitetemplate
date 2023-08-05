@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Exports\MahasiswaExport;
 use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 use Dompdf\Dompdf as PDF;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\DB;
 
 class MahasiswaController extends Controller
@@ -172,4 +175,9 @@ class MahasiswaController extends Controller
 
         return $pdf->stream();
     }
+
+    public function cetak_excel()
+	{
+		return Excel::download(new MahasiswaExport, 'mahasiswa.xlsx');
+	}
 }

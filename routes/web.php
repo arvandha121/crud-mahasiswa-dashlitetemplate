@@ -31,6 +31,7 @@ Route::group(['middleware' => 'App\Http\Middleware\IsLogin'], function () {
 
     Route::resource('/admin/data/mahasiswa', MahasiswaController::class);
     Route::get('/cetak_pdf', [MahasiswaController::class, 'cetak_pdf'])->name('cetak_pdf');
+    Route::get('/cetak_excel', [MahasiswaController::class, 'cetak_excel'])->name('cetak_excel');
 
     Route::get('/admin/data/kota', [KotaController::class, 'index'])->name('kota.index');
     Route::get('/admin/administration', [AdministrationController::class, 'index'])->name('administration.index');

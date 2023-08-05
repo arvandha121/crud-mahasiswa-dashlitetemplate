@@ -28,7 +28,7 @@
                         </a>
                         <a href="/cetak_pdf" class="btn btn-danger mt-3 ml-2" style="margin-left: 5px"><span><i
                                     class="fa fa-print"></i></span></a>
-                        <a href="" class="btn btn-success disabled mt-3 ml-2" style="margin-left: 5px"><span><i
+                        <a href="/cetak_excel" class="btn btn-success mt-3 ml-2" style="margin-left: 5px"><span><i
                                     class="fa fa-file"></i></span></a>
                     </div>
                 </div>
