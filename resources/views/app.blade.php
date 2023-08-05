@@ -125,9 +125,14 @@
                                     <i class="fa fa-bars mr-2"></i>
                                 </a>
                             </div>
-                            <b>
-                                <span id="currentDateTime" class="mr-3"></span>
-                            </b>
+                            <div class="container-fluid">
+                                <div class="container">
+                                    <b>
+                                        <span id="currentDateTime"></span>
+                                    </b>
+                                </div>
+                            </div>
+
                             <div class="nk-header-tools">
                                 <ul class="nk-quick-nav">
                                     <li class="dropdown user-dropdown">
@@ -181,6 +186,24 @@
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Get the URL query parameters
+                const urlParams = new URLSearchParams(window.location.search);
+                const showAll = urlParams.get('show_all');
+
+                // Check if the "show_all" parameter is present and truthy
+                if (showAll && showAll.toLowerCase() === 'true') {
+                    // Show all students (example: remove pagination or any filtering)
+                    const table = document.querySelector('.table');
+                    const rows = table.getElementsByTagName('tr');
+                    for (let i = 1; i < rows.length; i++) {
+                        rows[i].style.display = ''; // Show the row
+                    }
+                }
+            });
+        </script>
 
         <script>
             function filterData() {

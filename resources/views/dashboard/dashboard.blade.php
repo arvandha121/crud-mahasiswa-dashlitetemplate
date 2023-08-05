@@ -8,55 +8,61 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-4 col-md-3 col-sm-3">
-                            <div class="card card-statistic-2">
-                                <div class="card-icon shadow-primary bg-primary">
-                                    <i class="fas fa-users"></i>
-                                </div>
-                                <div class="card-wrap">
-                                    <div class="card-header">
-                                        <h4>Total Students</h4>
+                            <a href="data/mahasiswa?show_all=true">
+                                <div class="card card-statistic-2">
+                                    <div class="card-icon shadow-primary bg-primary">
+                                        <i class="fas fa-users"></i>
                                     </div>
-                                    <div class="card-body">
-                                        <p>
-                                            {{ $totalStudents }}
-                                        </p>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total Students</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>
+                                                {{ $totalStudents }}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-lg-4 col-md-3 col-sm-3">
-                            <div class="card card-statistic-2">
-                                <div class="card-icon shadow-primary bg-primary">
-                                    <i class="fas fa-male"></i>
-                                </div>
-                                <div class="card-wrap">
-                                    <div class="card-header">
-                                        <h4>Total Male</h4>
+                            <a href="data/mahasiswa?search=laki-laki">
+                                <div class="card card-statistic-2">
+                                    <div class="card-icon shadow-primary bg-primary">
+                                        <i class="fas fa-male"></i>
                                     </div>
-                                    <div class="card-body">
-                                        <p>
-                                            {{ $totalMaleStudents }}
-                                        </p>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total Male</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>
+                                                {{ $totalMaleStudents }}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-lg-4 col-md-3 col-sm-3">
-                            <div class="card card-statistic-2">
-                                <div class="card-icon shadow-primary bg-primary">
-                                    <i class="fas fa-female"></i>
-                                </div>
-                                <div class="card-wrap">
-                                    <div class="card-header">
-                                        <h4>Total Female</h4>
+                            <a href="data/mahasiswa?search=perempuan">
+                                <div class="card card-statistic-2">
+                                    <div class="card-icon shadow-primary bg-primary">
+                                        <i class="fas fa-female"></i>
                                     </div>
-                                    <div class="card-body">
-                                        <p>
-                                            {{ $totalFemaleStudents }}
-                                        </p>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total Female</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>
+                                                {{ $totalFemaleStudents }}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="row">

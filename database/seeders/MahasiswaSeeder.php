@@ -21,7 +21,7 @@ class MahasiswaSeeder extends Seeder
                 'nama'=>'Arief Nauvan Ramadha',
                 'tanggal_lahir'=>'2001-11-20',
                 'jenis_kelamin'=>'Laki-laki',
-                'alamat'=>'Perumahan pondok kencana I/1',
+                'alamat'=>'Kauman',
                 'kota'=>'Nganjuk',
                 'created_at'=>date('Y-m-d H:i:s')
             ]
@@ -32,7 +32,7 @@ class MahasiswaSeeder extends Seeder
                 'nama'=>'Ahmad Rafif Alaudin',
                 'tanggal_lahir'=>'2002-01-12',
                 'jenis_kelamin'=>'Laki-laki',
-                'alamat'=>'Perumahan Pondok Asri K/10',
+                'alamat'=>'Pesantren',
                 'kota'=>'Kediri',
                 'created_at'=>date('Y-m-d H:i:s')
             ]
@@ -43,7 +43,7 @@ class MahasiswaSeeder extends Seeder
                 'nama'=>'Taufik Anwar',
                 'tanggal_lahir'=>'2001-08-15',
                 'jenis_kelamin'=>'Laki-laki',
-                'alamat'=>'Jalan Raya Mulyoagung No.122',
+                'alamat'=>'Dau',
                 'kota'=>'Malang',
                 'created_at'=>date('Y-m-d H:i:s')
             ]
@@ -54,7 +54,7 @@ class MahasiswaSeeder extends Seeder
                 'nama'=>'Alun Mega',
                 'tanggal_lahir'=>'2001-03-10',
                 'jenis_kelamin'=>'Perempuan',
-                'alamat'=>'Jalan Dr. Soetomo V/15',
+                'alamat'=>'Rejoso',
                 'kota'=>'Nganjuk',
                 'created_at'=>date('Y-m-d H:i:s')
             ]
@@ -65,7 +65,7 @@ class MahasiswaSeeder extends Seeder
                 'nama'=>'Atmayanti',
                 'tanggal_lahir'=>'2003-03-15',
                 'jenis_kelamin'=>'Perempuan',
-                'alamat'=>'Desa Bandung',
+                'alamat'=>'Ds Bandung',
                 'kota'=>'Tulungagung',
                 'created_at'=>date('Y-m-d H:i:s')
             ]
@@ -76,7 +76,7 @@ class MahasiswaSeeder extends Seeder
                 'nama'=>'Muchammad Rizal Gusnanda Atmaja',
                 'tanggal_lahir'=>'2003-10-12',
                 'jenis_kelamin'=>'Laki-laki',
-                'alamat'=>'Desa Dawuhan',
+                'alamat'=>'Ds Dawuhan',
                 'kota'=>'Trenggalek',
                 'created_at'=>date('Y-m-d H:i:s')
             ]
@@ -87,7 +87,7 @@ class MahasiswaSeeder extends Seeder
                 'nama'=>'Venny Meida Hersianty',
                 'tanggal_lahir'=>'2002-01-11',
                 'jenis_kelamin'=>'Perempuan',
-                'alamat'=>'Jalan Sidoagung No.155',
+                'alamat'=>'Lowokwaru',
                 'kota'=>'Malang',
                 'created_at'=>date('Y-m-d H:i:s')
             ]

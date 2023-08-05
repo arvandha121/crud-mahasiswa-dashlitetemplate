@@ -9,16 +9,19 @@ use Illuminate\Support\Facades\Validator;
 
 class SessionController extends Controller
 {
-    function index(){
+    public function index()
+    {
         return view('auth/login');
     }
     
-    function login(Request $request) {
+    public function login(Request $request)
+    {
         $validator = Validator::make($request->all(), [
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required'
         ], [
             'email.required' => 'Email wajib diisi',
+            'email.email' => 'Format email tidak valid',
             'password.required' => 'Password wajib diisi'
         ]);
     
@@ -28,12 +31,12 @@ class SessionController extends Controller
                 ->withInput();
         }
     
-        $infologin = [
+        $credentials = [
             'email' => $request->email,
             'password' => $request->password
         ];
 
-        if (Auth::attempt($infologin)) {
+        if (Auth::attempt($credentials)) {
             $user = User::where('email', $request->email)->first();
             return redirect("/admin/dashboard")->with('userName', $user->name);
         } else {
@@ -43,7 +46,7 @@ class SessionController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::logout(); // This will invalidate the user's token and log them out.
+        Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 

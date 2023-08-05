@@ -23,15 +23,17 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::redirect('/', '/login');
-Route::get('/login', [SessionController::class, 'index']);
-Route::post('/login/check', [SessionController::class, 'login']); //check email dan password
+Route::get('/login', [SessionController::class, 'index'])->name('login');
+Route::post('/login/check', [SessionController::class, 'login'])->name('login.check');
 
-Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middleware('App\Http\Middleware\IsLogin');
+Route::group(['middleware' => 'App\Http\Middleware\IsLogin'], function () {
+    Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
-Route::resource('/admin/data/mahasiswa', MahasiswaController::class)->middleware('App\Http\Middleware\IsLogin');
-Route::get('/cetak_pdf', [MahasiswaController::class, 'cetak_pdf'])->name('cetak_pdf');
+    Route::resource('/admin/data/mahasiswa', MahasiswaController::class);
+    Route::get('/cetak_pdf', [MahasiswaController::class, 'cetak_pdf'])->name('cetak_pdf');
 
-Route::get('/admin/data/kota', [KotaController::class, 'index'])->name('kota.index')->middleware('App\Http\Middleware\IsLogin');
-Route::get('/admin/administration', [AdministrationController::class, 'index'])->name('administration.index')->middleware('App\Http\Middleware\IsLogin');
+    Route::get('/admin/data/kota', [KotaController::class, 'index'])->name('kota.index');
+    Route::get('/admin/administration', [AdministrationController::class, 'index'])->name('administration.index');
 
-Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
+    Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
+});
