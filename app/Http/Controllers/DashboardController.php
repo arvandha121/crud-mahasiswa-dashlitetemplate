@@ -37,7 +37,7 @@ class DashboardController extends Controller
         $totalMaleStudents = Mahasiswa::where('jenis_kelamin', 'Laki-laki')->count();
         $totalFemaleStudents = Mahasiswa::where('jenis_kelamin', 'Perempuan')->count();
 
-        return view("dashboard.dashboard", with(
+        return view("admin.dashboard.dashboard", with(
             [
                 'labelsTahun' => $labelsTahun , 
                 'datasetTahun' => $datasetTahun, 

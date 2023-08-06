@@ -1,4 +1,4 @@
-@extends('app')
+@extends('admin/admin')
 
 @section('content')
     <!-- content -->
@@ -14,22 +14,27 @@
                         </ul>
                     </div>
                 @endif
-                <form method="POST" action="{{ route('mahasiswa.update', $data->id) }}">
+                <form method="POST" action="{{ route('mahasiswa.store') }}">
                     @csrf
-                    @method('PUT')
+                    <div class="mb-3">
+                        <label for="id" class="form-label">Id</label>
+                        <input type="text" class="form-control" id="id" name="id" value="{{ $data->id }}"
+                            @if ($data->id) disabled @endif>
+                    </div>
                     <div class="mb-3">
                         <label for="nim" class="form-label">Nim</label>
-                        <input type="text" class="form-control" id="nim" name="nim" value="{{ $data->nim }}">
+                        <input type="text" class="form-control" id="nim" name="nim" value="{{ $data->nim }}"
+                            @if ($data->nim) disabled @endif>
                     </div>
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama"
-                            value="{{ $data->nama }}">
+                        <input type="text" class="form-control" id="nama" name="nama" value="{{ $data->nama }}"
+                            @if ($data->nama) disabled @endif>
                     </div>
                     <div class="mb-3">
                         <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
                         <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir"
-                            value="{{ $data->tanggal_lahir }}">
+                            value="{{ $data->tanggal_lahir }}" @if ($data->tanggal_lahir) disabled @endif>
                     </div>
                     <div class="mb-3">
                         <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
@@ -50,16 +55,16 @@
                     </div>
                     <div class="mb-3">
                         <label for="alamat" class="form-label">Alamat</label>
-                        <textarea class="form-control" placeholder="Alamat Rumah Mahasiswa" name="alamat">{{ $data->alamat }}</textarea>
+                        <textarea class="form-control" placeholder="Alamat Rumah Mahasiswa" name="alamat" disabled>{{ $data->alamat }}</textarea>
                     </div>
                     <div class="mb-3">
                         <label for="kota" class="form-label">Kota</label>
-                        <input type="text" class="form-control" id="kota" name="kota"
-                            value="{{ $data->kota }}">
-                        <div class="mt-4 mb-4">
-                            <a href="{{ route('mahasiswa.index') }}" class="btn btn-danger">Kembali</a>
-                            <button type="submit" class="btn btn-success">Submit</button>
-                        </div>
+                        <input type="text" class="form-control" id="kota" name="kota" value="{{ $data->kota }}"
+                            @if ($data->kota) disabled @endif>
+                    </div>
+                    <div class="mt-4 mb-4">
+                        <a href="{{ route('mahasiswa.index') }}" class="btn btn-danger">Kembali</a>
+                    </div>
                 </form>
             </div>
         </div>

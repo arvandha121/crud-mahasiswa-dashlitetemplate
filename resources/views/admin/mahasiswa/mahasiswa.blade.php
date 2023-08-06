@@ -1,4 +1,4 @@
-@extends('app')
+@extends('admin/admin')
 
 @section('content')
     <!-- content -->
@@ -27,15 +27,17 @@
                             title="Create Data Mahasiswa">
                             + Tambah Data
                         </a>
-                        <a href="/cetak_pdf" class="btn btn-danger mt-3 ml-2" style="margin-left: 5px" title="Download PDF">
+                        <a href="/cetak_pdf" class="btn btn-danger mt-3 ml-2" style="margin-left: 5px" title="Download PDF"
+                            onclick="return confirm('Apakah Anda yakin ingin mengunduh file PDF?')">
                             <span>
-                                <i class="fa fa-print"></i>
+                                <i class="fa fa-file-pdf"></i>
                             </span>
                         </a>
                         <a href="/cetak_excel" class="btn btn-success mt-3 ml-2" style="margin-left: 5px"
-                            title="Download Excel">
+                            title="Download Excel"
+                            onclick="return confirm('Apakah Anda yakin ingin mengunduh file Excel?')">
                             <span>
-                                <i class="fa fa-file"></i>
+                                <i class="fa fa-file-excel"></i>
                             </span>
                         </a>
                     </div>

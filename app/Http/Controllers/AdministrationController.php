@@ -23,6 +23,6 @@ class AdministrationController extends Controller
             })
             ->get();
 
-        return view('users/users', compact('data'));
+        return view('admin/users/users', compact('data'));
     }
 }

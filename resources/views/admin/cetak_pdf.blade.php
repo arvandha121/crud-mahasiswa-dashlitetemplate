@@ -6,15 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>cetak pdf</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Data Mahasiswa</h1>
-    <table class="table" border="1px">
+    <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>NIS</th>
+                <th>NO</th>
+                <th>NIM</th>
                 <th>NAMA</th>
                 <th>TANGGAL LAHIR</th>
                 <th>JENIS KELAMIN</th>
@@ -23,10 +47,13 @@
             </tr>
         </thead>
         <tbody>
+            <?php
+            $no = 1; // Inisialisasi nomor urut
+            ?>
             @foreach ($data as $item)
                 <tr>
-                    <td>{{ $item->id }}</td>
-                    <td>{{ $item->nis }}</td>
+                    <td>{{ $no++ }}</td>
+                    <td>{{ $item->nim }}</td>
                     <td>{{ $item->nama }}</td>
                     <td>{{ $item->tanggal_lahir }}</td>
                     <td>{{ $item->jenis_kelamin }}</td>

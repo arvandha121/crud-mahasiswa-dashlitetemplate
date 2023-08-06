@@ -43,7 +43,7 @@ class MahasiswaController extends Controller
         // Pass the search query and sort order to the pagination links
         $data->appends(['search' => $search, 'sort' => $sortOrder]);
 
-        return view("/mahasiswa/mahasiswa", compact('data', 'kotaList', 'sortOrder'));
+        return view("/admin/mahasiswa/mahasiswa", compact('data', 'kotaList', 'sortOrder'));
     }
 
     /**
@@ -53,7 +53,7 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        return view('/mahasiswa/create');
+        return view('/admin/mahasiswa/create');
     }
 
     /**
@@ -95,7 +95,7 @@ class MahasiswaController extends Controller
     public function show($id)
     {
         $data = Mahasiswa::where('id', $id)->first();
-        return view('/mahasiswa/show')->with('data', $data);
+        return view('admin/mahasiswa/show')->with('data', $data);
     }
 
     /**
@@ -107,7 +107,7 @@ class MahasiswaController extends Controller
     public function edit($id)
     {
         $data = Mahasiswa::where('id', $id)->first();
-        return view('/mahasiswa/edit')->with('data', $data);
+        return view('admin/mahasiswa/edit')->with('data', $data);
     }
 
     /**
@@ -176,7 +176,7 @@ class MahasiswaController extends Controller
     public function cetak_pdf() {
         $data = Mahasiswa::all();
         $pdf = new PDF();
-        $html = view('/cetak_pdf', compact('data'))->render();
+        $html = view('admin/cetak_pdf', compact('data'))->render();
         $pdf->loadHtml($html);
         $pdf->setPaper('A4', 'portrait');
         $pdf->render();

@@ -21,6 +21,6 @@ class KotaController extends Controller
             ->orderBy('id', 'asc')
             ->get();
 
-        return view('kota/kota', compact('data', 'kota'));
+        return view('admin/kota/kota', compact('data', 'kota'));
     }
 }
