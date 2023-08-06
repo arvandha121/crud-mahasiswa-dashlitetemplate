@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KotaController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\AdministrationController;
+use App\Http\Controllers\CacheClearController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,4 +38,12 @@ Route::group(['middleware' => 'App\Http\Middleware\IsLogin'], function () {
     Route::get('/admin/administration', [AdministrationController::class, 'index'])->name('administration.index');
 
     Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
+});
+
+Route::group([], function () {
+    Route::get('/clear-cache', [CacheClearController::class, 'clearCache']);
+    Route::get('/clear-config', [CacheClearController::class, 'clearConfig']);
+    Route::get('/clear-view', [CacheClearController::class, 'clearView']);
+    Route::get('/clear-route', [CacheClearController::class, 'clearRoute']);
+    Route::get('/clear-optimize', [CacheClearController::class, 'clearOptimize']);
 });
