@@ -23,13 +23,21 @@
                         </form>
                     </div>
                     <div class="d-flex justify-content-end col-md-7 text-md-end mb-3 ">
-                        <a href="/admin/data/mahasiswa/create" class="btn btn-primary mt-3 ml-2">
+                        <a href="/admin/data/mahasiswa/create" class="btn btn-primary mt-3 ml-2"
+                            title="Create Data Mahasiswa">
                             + Tambah Data
                         </a>
-                        <a href="/cetak_pdf" class="btn btn-danger mt-3 ml-2" style="margin-left: 5px"><span><i
-                                    class="fa fa-print"></i></span></a>
-                        <a href="/cetak_excel" class="btn btn-success mt-3 ml-2" style="margin-left: 5px"><span><i
-                                    class="fa fa-file"></i></span></a>
+                        <a href="/cetak_pdf" class="btn btn-danger mt-3 ml-2" style="margin-left: 5px" title="Download PDF">
+                            <span>
+                                <i class="fa fa-print"></i>
+                            </span>
+                        </a>
+                        <a href="/cetak_excel" class="btn btn-success mt-3 ml-2" style="margin-left: 5px"
+                            title="Download Excel">
+                            <span>
+                                <i class="fa fa-file"></i>
+                            </span>
+                        </a>
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -53,8 +61,7 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                {{-- <th scope="col">NO</th> --}}
-                                <th scope="col">ID</th>
+                                <th scope="col">NO</th>
                                 <th scope="col">NIM</th>
                                 <th scope="col">NAMA</th>
                                 <th scope="col">TANGGAL LAHIR</th>
@@ -66,9 +73,12 @@
                         </thead>
                         <tbody>
                             @foreach ($data as $item)
+                                <?php
+                                // Calculate the correct "NO" value based on the current page number and the number of items per page
+                                $no = ($data->currentPage() - 1) * $data->perPage() + $loop->index + 1;
+                                ?>
                                 <tr>
-                                    {{-- <td>{{ $loop->iteration }}</td> --}}
-                                    <td>{{ $item->id }}</td>
+                                    <td>{{ $no }}</td>
                                     <td>{{ $item->nim }}</td>
                                     <td>{{ $item->nama }}</td>
                                     <td>{{ $item->tanggal_lahir }}</td>
@@ -99,7 +109,7 @@
                         </tbody>
                     </table>
                 </div>
-                {{ $data->links() }}
+                {{ $data->appends(['search' => request('search'), 'sort' => request('sort')])->links() }}
             </div>
         </div>
     </div>

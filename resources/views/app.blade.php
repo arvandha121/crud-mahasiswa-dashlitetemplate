@@ -5,22 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mahasiswa</title>
+    <title>ADMIN | MAHASISWA</title>
 
-    <link id="skin-default" rel="stylesheet" href="/css/dashlite.css?ver=3.2.0">
-    <link id="skin-default" rel="stylesheet" href="/public/css/theme.css?ver=3.2.0">
-    {{-- <link id="skin-default" rel="stylesheet" href="{{ asset('/css/dashlite.css?ver=3.2.0') }}">
-    <link id="skin-default" rel="stylesheet" href="{{ asset('/css/theme.css?ver=3.2.0') }}"> --}}
+    <link id="skin-default" rel="stylesheet" href="{{ asset('/css/dashlite.css?ver=3.2.0') }}">
+    <link id="skin-default" rel="stylesheet" href="{{ asset('/css/theme.css?ver=3.2.0') }}">
 
     <!-- Fav Icon  -->
-    <link rel="shortcut icon" href="{{ asset('/images') }}">
+    <link rel="shortcut icon" href="{{ asset('/img/polinema.png') }}">
 
     {{-- Awesome icons --}}
     <link rel="stylesheet" href="/path/to/cdn/font-awesome.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" type="text/css" href="/css/app.css">
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}"> --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
 
     {{-- css bootstrap --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -54,14 +51,12 @@
                     </div>
                     <div class="nk-sidebar-brand d-flex align-items-center justify-content-center">
                         <a href="/admin/dashboard" class="logo-link nk-sidebar-logo me-2">
-                            <img class="logo-light logo-img"
-                                src="https://akupintar.id/documents/20143/0/LOGO+POLITEKNIK+NEGERI+MALANG.png/949b5c7d-1fd2-121d-c1ad-f275911cb955?version=1.0&t=1519104037264&imageThumbnail=1"
-                                srcset="./images/logo2x.png 2x" alt="logo">
-                            <img class="logo-light logo-img"
-                                src="https://akupintar.id/documents/20143/0/LOGO+POLITEKNIK+NEGERI+MALANG.png/949b5c7d-1fd2-121d-c1ad-f275911cb955?version=1.0&t=1519104037264&imageThumbnail=1"
-                                srcset="./images/logo2x.png 2x" alt="logo">
+                            <img class="logo-light logo-img" src="{{ asset('/img/polinema.png') }}" alt="logo">
+                            <img class="logo-light logo-img" src="{{ asset('/img/polinema.png') }}" alt="logo">
                         </a>
-                        <h5 class="mb-0" style="color: white;"><b>POLINEMA</b></h5>
+                        <a href="/admin/dashboard" class="logo-link nk-sidebar-logo me-2">
+                            <h5 class="mb-0" style="color: white;"><b>POLINEMA</b></h5>
+                        </a>
                     </div>
                 </div><!-- .nk-sidebar-element -->
                 <div class="nk-sidebar-element nk-sidebar-body">
@@ -179,87 +174,15 @@
         </div>
 
         <!-- JavaScript -->
-        <script src="/js/bundle.js?ver=3.2.0"></script>
-        <script src="/js/scripts.js?ver=3.2.0'"></script>
-        {{-- <script src="{{ asset('/js/bundle.js?ver=3.2.0') }}"></script>
-        <script src="{{ asset('/js/scripts.js?ver=3.2.0') }}"></script> --}}
+        <script src="{{ asset('/js/bundle.js?ver=3.2.0') }}"></script>
+        <script src="{{ asset('/js/scripts.js?ver=3.2.0') }}"></script>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Get the URL query parameters
-                const urlParams = new URLSearchParams(window.location.search);
-                const showAll = urlParams.get('show_all');
-
-                // Check if the "show_all" parameter is present and truthy
-                if (showAll && showAll.toLowerCase() === 'true') {
-                    // Show all students (example: remove pagination or any filtering)
-                    const table = document.querySelector('.table');
-                    const rows = table.getElementsByTagName('tr');
-                    for (let i = 1; i < rows.length; i++) {
-                        rows[i].style.display = ''; // Show the row
-                    }
-                }
-            });
-        </script>
-
-        <script>
-            function filterData() {
-                var jenisKelamin = document.getElementById('jenis_kelamin').value;
-                var kota = document.getElementById('kota').value;
-
-                var table = document.querySelector('.table');
-                var rows = table.getElementsByTagName('tr');
-
-                for (var i = 1; i < rows.length; i++) {
-                    var row = rows[i];
-                    var jenisKelaminCell = row.getElementsByTagName('td')[4];
-                    var kotaCell = row.getElementsByTagName('td')[6];
-                    var jenisKelaminData = jenisKelaminCell.textContent.trim();
-                    var kotaData = kotaCell.textContent.trim();
-
-                    if (
-                        (kota === '' || kotaData === kota) && (jenisKelamin === '' || jenisKelaminData === jenisKelamin)
-                    ) {
-                        row.style.display = '';
-                    } else {
-                        row.style.display = 'none';
-                    }
-                }
-            }
-        </script>
-
-        <script>
-            $(document).ready(function() {
-                $("#tanggal_lahir").datepicker({
-                    dateFormat: "yy-mm-dd", // Format tanggal yang ditampilkan
-                    changeMonth: true,
-                    changeYear: true
-                });
-
-                // Function to update date and time every second
-                function updateDateTime() {
-                    var currentDate = new Date();
-                    var dateTimeString = currentDate.toLocaleString();
-
-                    // Get the current day and append it to the dateTimeString
-                    var day = currentDate.toLocaleDateString(undefined, {
-                        weekday: 'long'
-                    });
-                    dateTimeString = day + ', ' + dateTimeString;
-
-                    $("#currentDateTime").text(dateTimeString);
-                }
-
-                // Call updateDateTime initially
-                updateDateTime();
-
-                // Call updateDateTime every second using setInterval
-                setInterval(updateDateTime, 1000);
-            });
-        </script>
+        <script src="{{ asset('/js/showAll.js') }}"></script>
+        <script src="{{ asset('/js/timeScript.js') }}"></script>
+        <script src="{{ asset('/js/filterData.js') }}"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

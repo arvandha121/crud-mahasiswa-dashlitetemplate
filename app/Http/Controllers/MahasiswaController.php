@@ -31,12 +31,20 @@ class MahasiswaController extends Controller
                  ->orWhere('kota', 'LIKE', "%$search%");
          }
      
-         $data = $data->orderBy('id', 'asc')->paginate(5);
-     
-         $kotaList = Mahasiswa::distinct('kota')->pluck('kota');
-     
-         return view("/mahasiswa/mahasiswa", compact('data', 'kotaList'));
-     }
+         // Get the current sort order from the URL query parameter
+        $sortOrder = $request->input('sort', 'asc');
+
+        // Order the data based on the sort order
+        $data = $data->orderBy('id', $sortOrder)->paginate(5);
+
+        // Get the distinct list of cities for filtering
+        $kotaList = Mahasiswa::distinct('kota')->pluck('kota');
+
+        // Pass the search query and sort order to the pagination links
+        $data->appends(['search' => $search, 'sort' => $sortOrder]);
+
+        return view("/mahasiswa/mahasiswa", compact('data', 'kotaList', 'sortOrder'));
+    }
 
     /**
      * Show the form for creating a new resource.
