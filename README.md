@@ -47,6 +47,8 @@ https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/7
 6. "php artisan migrate --seed"
 7. jalankan dengan mengetik "php artisan serve"
 ```
+## Demo clone project
+https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/d8b9d558-7054-449a-8a62-44bd3aa68938
 
 # License
 
