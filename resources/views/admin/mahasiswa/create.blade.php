@@ -58,7 +58,7 @@
                     </div>
                     <div class="mt-4 mb-4">
                         <a href="{{ route('mahasiswa.index') }}" class="btn btn-danger">Kembali</a>
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn btn-primary">Create User</button>
                     </div>
                 </form>
             </div>

@@ -41,8 +41,8 @@
                                 <div class="text-danger" id="passwordAlert"></div>
                             </div>
                             <!-- Add other input fields for other attributes -->
-
-                            <button type="submit" class="btn btn-primary" id="submitButton">Update</button>
+                            <a href="{{ route('administration.index') }}" class="btn btn-danger">Kembali</a>
+                            <button type="submit" class="btn btn-success" id="submitButton">Update</button>
                         </form>
                     </div>
                 </div>

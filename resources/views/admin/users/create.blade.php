@@ -36,6 +36,7 @@
                                 <label for="password" class="form-label">Password:</label>
                                 <input type="password" class="form-control" id="password" name="password">
                             </div>
+                            <a href="{{ route('administration.index') }}" class="btn btn-danger">Kembali</a>
                             <button type="submit" class="btn btn-primary">Create User</button>
                         </form>
                     </div>
