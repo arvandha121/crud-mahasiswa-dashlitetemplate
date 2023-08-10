@@ -7,6 +7,34 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# How to clone this project?
+```bash
+1. "git clone https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate.git" enter
+2. masuk ke folder dengan mengetik "cd crud-mahasiswa-dashlitetemplate" enter
+3. instal depedency dengan mengetik "composer install" atau "composer update" dan tunggu sampai selesai
+4. buat file env dengan cara ketik cp .env.example .env
+5. generate key dengan cara ketik "php artisan key:generate"
+6. "php artisan migrate --seed"
+7. jalankan dengan mengetik "php artisan serve"
+```
+## Demo clone project
+https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/d8b9d558-7054-449a-8a62-44bd3aa68938
+
+# How to clear cache, etc.?
+```bash
+/clear/cache
+/clear/config
+/clear/view
+/clear/route
+/clear/optimize
+```
+
+# How to see routes?
+```bash
+localhost/routes
+```
+![image](https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/a0701467-0ddd-4843-b2a7-ef04b6d18892)
+
 # Login
 ```bash
 'username : admin'
@@ -36,19 +64,6 @@ https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/e
 
 ## With localhost but with domain to access public
 https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/7e0962cc-2388-447c-ba62-900d37f7be9d
-
-# How to clone this project?
-```bash
-1. "git clone https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate.git" enter
-2. masuk ke folder dengan mengetik "cd crud-mahasiswa-dashlitetemplate" enter
-3. instal depedency dengan mengetik "composer install" atau "composer update" dan tunggu sampai selesai
-4. buat file env dengan cara ketik cp .env.example .env
-5. generate key dengan cara ketik "php artisan key:generate"
-6. "php artisan migrate --seed"
-7. jalankan dengan mengetik "php artisan serve"
-```
-## Demo clone project
-https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/d8b9d558-7054-449a-8a62-44bd3aa68938
 
 # How to localhost to access public
 ```bash
