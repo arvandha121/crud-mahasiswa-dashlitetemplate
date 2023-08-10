@@ -42,7 +42,9 @@ Route::group(['middleware' => ['App\Http\Middleware\IsLogin']], function () {
         Route::get('/{mahasiswa}/edit', [MahasiswaController::class, 'edit'])->name('edit');
         Route::put('/{mahasiswa}', [MahasiswaController::class, 'update'])->name('update');
         Route::delete('/{mahasiswa}', [MahasiswaController::class, 'destroy'])->name('destroy');
+        Route::get('/{mahasiswa}', [MahasiswaController::class, 'show'])->name('show'); // Add this line
     });
+    
 
     Route::get('/cetak_pdf', [MahasiswaController::class, 'cetak_pdf'])->name('cetak_pdf');
     Route::get('/cetak_excel', [MahasiswaController::class, 'cetak_excel'])->name('cetak_excel');
