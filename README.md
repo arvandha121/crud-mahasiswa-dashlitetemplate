@@ -8,29 +8,45 @@
 </p>
 
 # Login
-'email : admin@gmail.com'
+```bash
+'username : admin'
 'password : Password121'
+```
 
-![Screenshot 2023-08-02 223520](https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/8a7537e6-ef47-42cc-b966-f00eaae056ac)
+![image](https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/f41b68cc-7fc2-4844-b3ef-bc48dda762d8)
+
+# Register
+![image](https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/83b1a044-765a-4d24-86c4-b4c030558862)
 
 # Dashboard
-![Screenshot 2023-08-02 223848](https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/6a8755f3-d048-4df7-b4cf-8a44e33b3709)
+![image](https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/f0c351af-8aab-4891-9623-13819ad4449e)
 
 # Data Mahasiswa
-![image](https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/6d5fb99a-6bec-47b9-84c8-d8069909e3b0)
+![image](https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/d205d18e-bb73-4cd9-8967-13cb52f86522)
 
 # Data Kota
-![image](https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/66c00bbe-67c5-42e4-b496-a84f91308842)
+![image](https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/4e88e598-63a2-416d-bf5b-2b61448f5803)
 
 # Administration
-![image](https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/8de78337-2d97-4809-93aa-239be1cab47f)
+![image](https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/7ae37540-016e-4f2b-98ab-5413801c5599)
 
 # Video Demo
 ### With Localhost xampp
-https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/223b778b-bf8d-4423-8176-528dcc8670b3
+https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/e88d5b01-616e-4cb9-bc10-5b84fd8e3109
 
 ### With localhost but with domain to access public
-https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/82cbb09a-9b84-4c95-8c6e-65818d28763f
+https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/7e0962cc-2388-447c-ba62-900d37f7be9d
+
+### How to clone this project?
+```bash
+1. git clone https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate.git enter
+2. masuk ke folder dengan mengetik cd crud-mahasiswa-dashlitetemplate enter
+3. instal depedency dengan mengetik "composer install" atau "composer update" dan tunggu sampai selesai
+4. buat file env dengan cara ketik cp .env.example .env
+5. generate key dengan cara ketik php artisan key:generate
+6. php artisan migrate –seed
+7. jalankan dengan mengetik php artisan serve
+```
 
 ## License
 
