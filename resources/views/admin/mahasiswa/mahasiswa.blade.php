@@ -96,17 +96,40 @@
                                             href="{{ url('/admin/data/mahasiswa/' . $item->id . '/edit') }}">
                                             <span><i class="fa fa-pen"></i></span>
                                         </a>
-                                        <form class="d-inline" action="{{ url('/admin/data/mahasiswa/' . $item->id) }}"
-                                            method="post"
-                                            onsubmit="return confirm('Are you sure you want to delete this item?');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-outline-danger btn-sm d-inline">
-                                                <span><i class="fa fa-trash"></i></span>
-                                            </button>
-                                        </form>
+                                        <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
+                                            data-bs-target="#deleteModal{{ $item->id }}">
+                                            <span><i class="fa fa-trash"></i></span>
+                                        </button>
                                     </td>
                                 </tr>
+                                <!-- Modal Konfirmasi Delete -->
+                                <div class="modal fade" id="deleteModal{{ $item->id }}" tabindex="-1"
+                                    aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header bg-danger text-white">
+                                                <h5 class="modal-title" id="deleteModalLabel">Konfirmasi Hapus Data</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Apakah Anda yakin ingin menghapus data ini?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Batal</button>
+                                                <button type="button" class="btn btn-danger"
+                                                    onclick="event.preventDefault(); document.getElementById('delete-form{{ $item->id }}').submit();">Hapus</button>
+                                                <form id="delete-form{{ $item->id }}"
+                                                    action="{{ url('/admin/data/mahasiswa/' . $item->id) }}" method="post"
+                                                    class="d-none">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
                         </tbody>
                     </table>

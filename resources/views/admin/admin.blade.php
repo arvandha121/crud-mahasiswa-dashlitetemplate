@@ -143,13 +143,12 @@
                                                 <ul class="link-list">
                                                     @auth
                                                         <li class="user-name">Hello,
-                                                            <span class="text-primary">{{ auth()->user()->nama }}
-                                                            </span>
+                                                            <span class="text-primary">{{ auth()->user()->nama }}</span>
                                                         </li>
-                                                        <li class="divider"></li> <!-- Add a separator line here -->
+                                                        <li class="divider"></li>
                                                     @endauth
                                                     <li>
-                                                        <a href="{{ url('/logout') }}">
+                                                        <a href="#" id="logoutBtn">
                                                             <span>
                                                                 <i class="fa fa-sign-out-alt"
                                                                     style="padding: 10px"></i>
@@ -172,128 +171,164 @@
                 {{-- content --}}
             </div>
         </div>
+    </div>
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutModalLabel">Logout
+                        Confirmation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to logout?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmLogoutBtn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="{{ asset('/js/bundle.js?ver=3.2.0') }}"></script>
+    <script src="{{ asset('/js/scripts.js?ver=3.2.0') }}"></script>
 
-        <!-- JavaScript -->
-        <script src="{{ asset('/js/bundle.js?ver=3.2.0') }}"></script>
-        <script src="{{ asset('/js/scripts.js?ver=3.2.0') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="{{ asset('/js/showAll.js') }}"></script>
+    <script src="{{ asset('/js/timeScript.js') }}"></script>
+    <script src="{{ asset('/js/filterData.js') }}"></script>
 
-        <script src="{{ asset('/js/showAll.js') }}"></script>
-        <script src="{{ asset('/js/timeScript.js') }}"></script>
-        <script src="{{ asset('/js/filterData.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    @if (isset($labelsGender) && isset($datasetGender))
+        <script>
+            var ctx = document.getElementById('studentsGender').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: @json($labelsGender),
+                    datasets: [{
+                        label: 'Jumlah',
+                        data: @json($datasetGender),
+                        backgroundColor: [
+                            'rgb(54, 162, 235)',
+                            'rgb(255, 99, 132)'
+                        ],
+                        borderColor: 'rgba(255, 255, 255, 255)',
+                        borderWidth: 4
+                    }]
+                },
+            });
+        </script>
+    @endif
 
-        @if (isset($labelsGender) && isset($datasetGender))
-            <script>
-                var ctx = document.getElementById('studentsGender').getContext('2d');
-                var myChart = new Chart(ctx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: @json($labelsGender),
-                        datasets: [{
-                            label: 'Jumlah',
-                            data: @json($datasetGender),
-                            backgroundColor: [
-                                'rgb(54, 162, 235)',
-                                'rgb(255, 99, 132)'
-                            ],
-                            borderColor: 'rgba(255, 255, 255, 255)',
-                            borderWidth: 4
-                        }]
-                    },
-                });
-            </script>
-        @endif
+    @if (isset($labelsCity) && isset($datasetCity))
+        <script>
+            var ctx = document.getElementById('studentsCity').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: @json($labelsCity),
+                    datasets: [{
+                        label: 'Jumlah',
+                        data: @json($datasetCity),
+                        backgroundColor: generateBackgroundColors(@json($datasetCity)),
+                        borderColor: '#ffffff',
+                        borderWidth: 1
+                    }]
+                },
+            });
 
-        @if (isset($labelsCity) && isset($datasetCity))
-            <script>
-                var ctx = document.getElementById('studentsCity').getContext('2d');
-                var myChart = new Chart(ctx, {
-                    type: 'pie',
-                    data: {
-                        labels: @json($labelsCity),
-                        datasets: [{
-                            label: 'Jumlah',
-                            data: @json($datasetCity),
-                            backgroundColor: generateBackgroundColors(@json($datasetCity)),
-                            borderColor: '#ffffff',
-                            borderWidth: 1
-                        }]
-                    },
-                });
-
-                function generateBackgroundColors(data) {
-                    var backgroundColors = [];
-                    for (var i = 0; i < data.length; i++) {
-                        backgroundColors.push(getRandomColor());
-                    }
-                    return backgroundColors;
+            function generateBackgroundColors(data) {
+                var backgroundColors = [];
+                for (var i = 0; i < data.length; i++) {
+                    backgroundColors.push(getRandomColor());
                 }
+                return backgroundColors;
+            }
 
-                function getRandomColor() {
-                    var letters = '0123456789ABCDEF';
-                    var color = '#';
-                    for (var i = 0; i < 6; i++) {
-                        color += letters[Math.floor(Math.random() * 16)];
-                    }
-                    return color;
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
                 }
-            </script>
-        @endif
+                return color;
+            }
+        </script>
+    @endif
 
-        @if (isset($labelsTahun) && isset($datasetTahun))
-            <script>
-                var ctx = document.getElementById('birthYearChart').getContext('2d');
-                var myChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: @json($labelsTahun),
-                        datasets: [{
-                            label: 'Jumlah',
-                            data: @json($datasetTahun),
-                            backgroundColor: generateBackgroundColors(@json($datasetTahun)),
-                            borderColor: '#ffffff',
-                            borderWidth: 1
-                        }]
+    @if (isset($labelsTahun) && isset($datasetTahun))
+        <script>
+            var ctx = document.getElementById('birthYearChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: @json($labelsTahun),
+                    datasets: [{
+                        label: 'Jumlah',
+                        data: @json($datasetTahun),
+                        backgroundColor: generateBackgroundColors(@json($datasetTahun)),
+                        borderColor: '#ffffff',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     },
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        },
-                        plugins: {
-                            legend: {
-                                labels: {
-                                    color: 'rgba(0, 0, 0, 0)' // Transparent color for labels
-                                }
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'rgba(0, 0, 0, 0)' // Transparent color for labels
                             }
                         }
                     }
-                });
-
-                function generateBackgroundColors(data) {
-                    var backgroundColors = [];
-                    for (var i = 0; i < data.length; i++) {
-                        backgroundColors.push(getRandomColor());
-                    }
-                    return backgroundColors;
                 }
+            });
 
-                function getRandomColor() {
-                    var letters = '0123456789ABCDEF';
-                    var color = '#';
-                    for (var i = 0; i < 6; i++) {
-                        color += letters[Math.floor(Math.random() * 16)];
-                    }
-                    return color;
+            function generateBackgroundColors(data) {
+                var backgroundColors = [];
+                for (var i = 0; i < data.length; i++) {
+                    backgroundColors.push(getRandomColor());
                 }
-            </script>
-        @endif
-    </div>
+                return backgroundColors;
+            }
+
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+        </script>
+    @endif
+    <script>
+        // Menambahkan event listener saat dokumen selesai dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menampilkan modal saat tombol logout ditekan
+            var logoutBtn = document.getElementById('logoutBtn');
+            var logoutModal = new bootstrap.Modal(document.getElementById('logoutModal'));
+
+            logoutBtn.addEventListener('click', function(event) {
+                event.preventDefault(); // Mencegah tindakan default link
+                logoutModal.show();
+            });
+
+            // Menambahkan event listener pada tombol "Logout" dalam modal
+            var confirmLogoutBtn = document.getElementById('confirmLogoutBtn');
+            confirmLogoutBtn.addEventListener('click', function() {
+                window.location.href = "{{ url('/logout') }}";
+            });
+        });
+    </script>
 </body>
 
 </html>
