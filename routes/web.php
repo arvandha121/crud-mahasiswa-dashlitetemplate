@@ -35,7 +35,10 @@ Route::group(['middleware' => 'App\Http\Middleware\IsLogin'], function () {
     Route::get('/cetak_excel', [MahasiswaController::class, 'cetak_excel'])->name('cetak_excel');
 
     Route::get('/admin/data/kota', [KotaController::class, 'index'])->name('kota.index');
-    Route::get('/admin/administration', [AdministrationController::class, 'index'])->name('administration.index');
+    Route::get('/pdf', [KotaController::class, 'downloadPDF'])->name('kota.downloadPDF');
+    Route::get('/excel', [KotaController::class, 'downloadExcel'])->name('kota.downloadExcel');
+
+    Route::resource('/admin/administration', AdministrationController::class);
 
     Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
 });
