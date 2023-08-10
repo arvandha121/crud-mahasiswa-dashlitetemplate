@@ -50,6 +50,12 @@ https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/7
 ## Demo clone project
 https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/d8b9d558-7054-449a-8a62-44bd3aa68938
 
+# How to localhost to access public
+```bash
+Link youtube : "https://youtu.be/4ujLbw0SIvI"
+Link documentation and run : "https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/tree/main/sql"
+```
+
 # License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
