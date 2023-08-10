@@ -22,13 +22,14 @@
                         </form>
                     </div>
                     <div class="d-flex justify-content-end col-md-7 text-md-end mb-3 ">
-                        <a href="/pdf" class="btn btn-danger mt-3 ml-2" style="margin-left: 5px" title="Download PDF"
-                            onclick="return confirm('Apakah Anda yakin ingin mengunduh file PDF?')">
+                        <a href="{{ route('kota.downloadPDF') }}" class="btn btn-danger mt-3 ml-2" style="margin-left: 5px"
+                            title="Download PDF" onclick="return confirm('Apakah Anda yakin ingin mengunduh file PDF?')">
                             <span>
                                 <i class="fa fa-file-pdf"></i>
                             </span>
                         </a>
-                        <a href="/excel" class="btn btn-success mt-3 ml-2" style="margin-left: 5px" title="Download Excel"
+                        <a href="{{ route('kota.downloadExcel') }}" class="btn btn-success mt-3 ml-2"
+                            style="margin-left: 5px" title="Download Excel"
                             onclick="return confirm('Apakah Anda yakin ingin mengunduh file Excel?')">
                             <span>
                                 <i class="fa fa-file-excel"></i>

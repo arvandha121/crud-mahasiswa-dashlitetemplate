@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KotaController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\AdministrationController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CacheClearController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,10 @@ Route::get('/laravel', function () {
 Route::redirect('/', '/login');
 Route::get('/login', [SessionController::class, 'index'])->name('login');
 Route::post('/login/check', [SessionController::class, 'login'])->name('login.check');
+
+Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
+
 
 Route::group(['middleware' => ['App\Http\Middleware\IsLogin']], function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');

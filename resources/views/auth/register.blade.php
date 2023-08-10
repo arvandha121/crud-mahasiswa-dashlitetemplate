@@ -13,30 +13,41 @@
                     alt="">
             </div>
             <div class="text-center mt-4 name">
-                Admin Polinema
+                Register for Admin Polinema
             </div>
-            <form class="p-3 mt-3" method="POST" action="{{ url('/login/check') }}">
+            <form class="p-3 mt-3" method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="form-field d-flex align-items-center">
-                    <input type="text" name="nama" id="nama" placeholder="nama" value="{{ old('nama') }}">
+                    <input type="text" name="nama" id="nama" placeholder="Nama" value="{{ old('nama') }}">
                 </div>
                 @error('nama')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-field d-flex align-items-center">
+                    <input type="email" name="email" id="email" placeholder="E-Mail Address"
+                        value="{{ old('email') }}">
+                </div>
+                @error('email')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+                <div class="form-field d-flex align-items-center">
                     <input type="password" name="password" id="password" placeholder="Password">
                 </div>
-                <input style="margin-left: 4px" type="checkbox" id="showPassword">
-                <label style="margin-left: 4px; margin-bottom: 4px" for="showPassword">Lihat Password</label>
                 @error('password')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
-                <button class="btn mt-3">Login</button>
+                <div class="form-field d-flex align-items-center">
+                    <input type="password" name="password_confirmation" id="password_confirmation"
+                        placeholder="Confirm Password">
+                </div>
+                @error('password_confirmation')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+                <button class="btn btn-primary mt-3 btn-block">Register</button>
             </form>
-            <div class="text-center fs-6">
-                Don't have accounts? <a href="/register">Sign up</a>
+            <div class="text-center fs-6 mt-3">
+                Already have an account? <a href="/login">Sign in</a>
             </div>
         </div>
     </div>
-    <footer class="footer">© 2023 - Arvandha121</footer>
 @endsection

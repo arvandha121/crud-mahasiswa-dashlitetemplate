@@ -93,26 +93,14 @@ class AdministrationController extends Controller
         $user->update($validatedData);
 
         // Update password if provided
-        $validatedData = $request->validate([
-            'nama' => 'required|string|max:255',
-            'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
-            'password' => 'nullable|string|min:8',
-        ], [
-            'nama.required' => 'Name field is required',
-            'email.required' => 'Email field is required',
-            'password.required' => 'Password field is required',
-        ]);
+        if (!empty($validatedData['password'])) {
+            $user->update(['password' => Hash::make($validatedData['password'])]);
+        }
 
         return redirect()->route('administration.index')
             ->with('success', 'User updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $user = Users::findOrFail($id);
