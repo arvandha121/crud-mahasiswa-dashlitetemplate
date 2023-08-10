@@ -22,11 +22,11 @@ https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/d
 
 # How to clear cache, etc.?
 ```bash
-/clear/cache
-/clear/config
-/clear/view
-/clear/route
-/clear/optimize
+localhost/clear/cache
+localhost/clear/config
+localhost/clear/view
+localhost/clear/route
+localhost/clear/optimize
 ```
 
 # How to see routes?
