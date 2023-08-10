@@ -17,11 +17,11 @@ class SessionController extends Controller
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'email' => 'required|email',
+            'nama' => 'required',
             'password' => 'required'
         ], [
-            'email.required' => 'Email wajib diisi',
-            'email.email' => 'Format email tidak valid',
+            'nama.required' => 'nama wajib diisi',
+            'nama.nama' => 'Format nama tidak valid',
             'password.required' => 'Password wajib diisi'
         ]);
     
@@ -32,12 +32,12 @@ class SessionController extends Controller
         }
     
         $credentials = [
-            'email' => $request->email,
+            'nama' => $request->nama,
             'password' => $request->password
         ];
 
         if (Auth::attempt($credentials)) {
-            $user = User::where('email', $request->email)->first();
+            $user = User::where('nama', $request->nama)->first();
             return redirect("/admin/dashboard")->with('userName', $user->name);
         } else {
             return redirect('/login');

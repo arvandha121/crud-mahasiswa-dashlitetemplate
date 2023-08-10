@@ -30,14 +30,14 @@
                 @csrf
                 <div class="form-field d-flex align-items-center">
                     <span class="far fa-user"></span>
-                    <input type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}">
+                    <input type="nama" name="nama" id="nama" placeholder="nama" value="{{ old('nama') }}">
                 </div>
-                @error('email')
+                @error('nama')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-field d-flex align-items-center">
                     <span class="fas fa-key"></span>
-                    <input type="password" name="password" id="password" placeholder="Password" value="Password121">
+                    <input type="password" name="password" id="password" placeholder="Password">
                 </div>
                 @error('password')
                     <div class="text-danger">{{ $message }}</div>
