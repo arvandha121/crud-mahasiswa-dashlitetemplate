@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="{{ asset('/img/polinema.png') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
@@ -29,16 +30,16 @@
             <form class="p-3 mt-3" method="POST" action="{{ url('/login/check') }}">
                 @csrf
                 <div class="form-field d-flex align-items-center">
-                    <span class="far fa-user"></span>
-                    <input type="nama" name="nama" id="nama" placeholder="nama" value="{{ old('nama') }}">
+                    <input type="text" name="nama" id="nama" placeholder="nama" value="{{ old('nama') }}">
                 </div>
                 @error('nama')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-field d-flex align-items-center">
-                    <span class="fas fa-key"></span>
                     <input type="password" name="password" id="password" placeholder="Password">
                 </div>
+                <input style="margin-left: 4px" type="checkbox" id="showPassword">
+                <label style="margin-left: 4px; margin-bottom: 4px" for="showPassword">Lihat Password</label>
                 @error('password')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -49,7 +50,17 @@
             </div>
         </div>
     </div>
-    <footer class="footer">(c) Copyright 2023 - Arvandha121</footer>
+    <footer class="footer">© 2023 - Arvandha121</footer>
+    <script>
+        // Toggle password visibility
+        const showPasswordCheckbox = document.getElementById('showPassword');
+        const passwordInput = document.getElementById('password');
+
+        showPasswordCheckbox.addEventListener('change', () => {
+            const type = showPasswordCheckbox.checked ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+        });
+    </script>
 </body>
 
 </html>
