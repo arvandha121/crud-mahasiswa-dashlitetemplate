@@ -50,4 +50,19 @@
             </div>
         </div>
     </div>
+    <script>
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('password_confirmation');
+        const registerButton = document.getElementById('registerButton');
+
+        confirmPasswordInput.addEventListener('input', () => {
+            if (passwordInput.value === confirmPasswordInput.value) {
+                confirmPasswordInput.setCustomValidity('');
+                registerButton.removeAttribute('disabled');
+            } else {
+                confirmPasswordInput.setCustomValidity('Passwords must match');
+                registerButton.setAttribute('disabled', 'disabled');
+            }
+        });
+    </script>
 @endsection
