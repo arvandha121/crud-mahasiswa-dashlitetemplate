@@ -31,23 +31,23 @@
 ![image](https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/7ae37540-016e-4f2b-98ab-5413801c5599)
 
 # Video Demo
-### With Localhost xampp
+## With Localhost xampp
 https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/e88d5b01-616e-4cb9-bc10-5b84fd8e3109
 
-### With localhost but with domain to access public
+## With localhost but with domain to access public
 https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate/assets/85327119/7e0962cc-2388-447c-ba62-900d37f7be9d
 
-### How to clone this project?
+# How to clone this project?
 ```bash
-1. git clone https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate.git enter
-2. masuk ke folder dengan mengetik cd crud-mahasiswa-dashlitetemplate enter
+1. "git clone https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate.git" enter
+2. masuk ke folder dengan mengetik "cd crud-mahasiswa-dashlitetemplate" enter
 3. instal depedency dengan mengetik "composer install" atau "composer update" dan tunggu sampai selesai
 4. buat file env dengan cara ketik cp .env.example .env
-5. generate key dengan cara ketik php artisan key:generate
-6. php artisan migrate –seed
-7. jalankan dengan mengetik php artisan serve
+5. generate key dengan cara ketik "php artisan key:generate"
+6. "php artisan migrate --seed"
+7. jalankan dengan mengetik "php artisan serve"
 ```
 
-## License
+# License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
