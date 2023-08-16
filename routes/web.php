@@ -60,7 +60,7 @@ Route::group(['middleware' => ['App\Http\Middleware\IsLogin']], function () {
     Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
 });
 
-Route::group(['prefix' => 'clear'], function () {
+Route::group(['prefix' => 'clear', 'middleware' => 'debug'], function () {
     Route::get('cache', [CacheClearController::class, 'clearCache']);
     Route::get('config', [CacheClearController::class, 'clearConfig']);
     Route::get('view', [CacheClearController::class, 'clearView']);
