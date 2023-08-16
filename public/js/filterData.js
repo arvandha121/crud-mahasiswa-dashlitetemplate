@@ -1,6 +1,6 @@
 function filterData() {
-    var jenisKelamin = document.getElementById('jenis_kelamin').value;
-    var kota = document.getElementById('kota').value;
+    var selectedGender = document.getElementById('jenis_kelamin').value;
+    var selectedCity = document.getElementById('kota').value;
 
     var table = document.querySelector('.table');
     var rows = table.getElementsByTagName('tr');
@@ -12,12 +12,31 @@ function filterData() {
         var jenisKelaminData = jenisKelaminCell.textContent.trim();
         var kotaData = kotaCell.textContent.trim();
 
-        if (
-            (kota === '' || kotaData === kota) && (jenisKelamin === '' || jenisKelaminData === jenisKelamin)
-        ) {
+        var genderMatch = selectedGender === '' || jenisKelaminData === selectedGender;
+        var cityMatch = selectedCity === '' || kotaData === selectedCity;
+
+        if (genderMatch && cityMatch) {
             row.style.display = '';
         } else {
             row.style.display = 'none';
+        }
+    }
+
+    // Auto-select gender option
+    var genderSelect = document.getElementById('jenis_kelamin');
+    for (var i = 0; i < genderSelect.options.length; i++) {
+        if (genderSelect.options[i].value === selectedGender) {
+            genderSelect.selectedIndex = i;
+            break;
+        }
+    }
+
+    // Auto-select city option
+    var citySelect = document.getElementById('kota');
+    for (var i = 0; i < citySelect.options.length; i++) {
+        if (citySelect.options[i].value === selectedCity) {
+            citySelect.selectedIndex = i;
+            break;
         }
     }
 }

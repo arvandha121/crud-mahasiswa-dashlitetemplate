@@ -51,7 +51,7 @@
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <select name="kota" id="kota" class="form-control">
+                        <select name="kota" id="kota" class="form-control" onchange="filterData()">
                             <option value="">Pilih Kota</option>
                             @foreach ($kotaList as $kota)
                                 <option value="{{ $kota }}">{{ $kota }}</option>
