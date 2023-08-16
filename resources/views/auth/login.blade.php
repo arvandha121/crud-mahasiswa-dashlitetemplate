@@ -8,6 +8,11 @@
             </div>
         @endif
         <div class="wrapper">
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
             <div class="logo">
                 <img src="https://akupintar.id/documents/20143/0/LOGO+POLITEKNIK+NEGERI+MALANG.png/949b5c7d-1fd2-121d-c1ad-f275911cb955?version=1.0&t=1519104037264&imageThumbnail=1"
                     alt="">
@@ -17,20 +22,20 @@
             </div>
             <form class="p-3 mt-3" method="POST" action="{{ url('/login/check') }}">
                 @csrf
-                <div class="form-field d-flex align-items-center">
-                    <input type="text" name="nama" id="nama" placeholder="nama" value="{{ old('nama') }}">
-                </div>
-                @error('nama')
+                @error('email')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-field d-flex align-items-center">
-                    <input type="password" name="password" id="password" placeholder="Password">
+                    <input type="text" name="email" id="email" placeholder="email" value="admin@gmail.com">
                 </div>
-                <input style="margin-left: 4px" type="checkbox" id="showPassword">
-                <label style="margin-left: 4px; margin-bottom: 4px" for="showPassword">Lihat Password</label>
                 @error('password')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
+                <div class="form-field d-flex align-items-center">
+                    <input type="password" name="password" id="password" placeholder="Password" value="Password121">
+                </div>
+                <input style="margin-left: 4px" type="checkbox" id="showPassword">
+                <label style="margin-left: 4px; margin-bottom: 4px" for="showPassword">Lihat Password</label>
                 <button class="btn mt-3">Login</button>
             </form>
             <div class="text-center fs-6">

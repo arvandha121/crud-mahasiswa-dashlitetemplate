@@ -17,32 +17,32 @@
             </div>
             <form class="p-3 mt-3" method="POST" action="{{ route('register') }}">
                 @csrf
+                @error('nama')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
                 <div class="form-field d-flex align-items-center">
                     <input type="text" name="nama" id="nama" placeholder="Nama" value="{{ old('nama') }}">
                 </div>
-                @error('nama')
+                @error('email')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-field d-flex align-items-center">
                     <input type="email" name="email" id="email" placeholder="E-Mail Address"
                         value="{{ old('email') }}">
                 </div>
-                @error('email')
+                @error('password')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-field d-flex align-items-center">
                     <input type="password" name="password" id="password" placeholder="Password">
                 </div>
-                @error('password')
+                @error('password_confirmation')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-field d-flex align-items-center">
                     <input type="password" name="password_confirmation" id="password_confirmation"
                         placeholder="Confirm Password">
                 </div>
-                @error('password_confirmation')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
                 <button class="btn btn-primary mt-3 btn-block">Register</button>
             </form>
             <div class="text-center fs-6 mt-3">

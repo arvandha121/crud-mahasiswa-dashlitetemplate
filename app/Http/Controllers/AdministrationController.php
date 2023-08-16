@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Models\Users;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
@@ -46,7 +44,10 @@ class AdministrationController extends Controller
         $validatedData = $request->validate([
             'nama' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users,email',
-            'password' => 'required|string|min:8',
+            'password' => 'required|string|min:8|regex:/^(?=.*[A-Z])(?=.*\d).+$/',
+        ],[
+            'email.unique' => 'The email address has already been taken.', // Custom error message
+            'password.regex' => 'The password must contain at least 1 uppercase letter, 1 lowercase letter, and 1 digit.'
         ]);
 
         Users::create([
@@ -85,8 +86,16 @@ class AdministrationController extends Controller
         // Validate input data
         $validatedData = $request->validate([
             'nama' => 'required|string|max:255',
-            'email' => 'required|email|max:255|unique:users,email,' . $id,
-            'password' => 'nullable|string|min:8', // Allow password to be nullable
+            'email' => [
+                'required',
+                'email',
+                'max:255',
+                Rule::unique('users')->ignore($id),
+            ],
+            'password' => 'nullable|string|min:8|regex:/^(?=.*[A-Z])(?=.*\d).+$/', // Allow password to be nullable
+        ],[
+            'email.unique' => 'The email address has already been taken.', // Custom error message
+            'password.regex' => 'The password must contain at least 1 uppercase letter, 1 lowercase letter, and 1 digit.'
         ]);
 
         // Update user attributes

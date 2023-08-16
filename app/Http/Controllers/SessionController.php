@@ -17,30 +17,31 @@ class SessionController extends Controller
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'nama' => 'required',
-            'password' => 'required'
+            'email' => 'required|email',
+            'password' => 'required|string|min:8|regex:/^(?=.*[A-Z])(?=.*\d).+$/'
         ], [
-            'nama.required' => 'nama wajib diisi',
-            'nama.nama' => 'Format nama tidak valid',
-            'password.required' => 'Password wajib diisi'
+            'email.required' => 'E-mail is required',
+            'email.email' => 'Invalid e-mail format',
+            'password.required' => 'Password is required',
+            'password.regex' => 'The password must contain at least 1 uppercase letter, 1 lowercase letter, and 1 digit.'
         ]);
-    
+
         if ($validator->fails()) {
             return redirect('/login')
                 ->withErrors($validator)
                 ->withInput();
         }
-    
+
         $credentials = [
-            'nama' => $request->nama,
+            'email' => $request->email,
             'password' => $request->password
         ];
 
         if (Auth::attempt($credentials)) {
-            $user = User::where('nama', $request->nama)->first();
+            $user = User::where('email', $request->email)->first();
             return redirect("/admin/dashboard")->with('userName', $user->name);
         } else {
-            return redirect('/login');
+            return redirect('/login')->with('error', 'Invalid email or password');
         }
     }
 
