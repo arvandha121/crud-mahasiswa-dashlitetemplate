@@ -8,7 +8,7 @@
 </p>
 
 # ~~ DEMO PROJECT ~~
-<a href="https://testing.arief.cloud/" target="_blank">https://testing.arief.cloud/</a>
+<a href="https://testing.arief.cloud/" target="_blank">Klik di sini untuk membuka tautan di tab baru</a>
 
 # How to clone this project?
 ```bash
