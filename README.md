@@ -7,6 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# ~~ DEMO PROJECT ~~
+https://testing.arief.cloud/
+
 # How to clone this project?
 ```bash
 1. "git clone https://github.com/arvandha121/crud-mahasiswa-dashlitetemplate.git" enter
