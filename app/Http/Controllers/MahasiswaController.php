@@ -35,7 +35,7 @@ class MahasiswaController extends Controller
         $sortOrder = $request->input('sort', 'asc');
 
         // Order the data based on the sort order
-        $data = $data->orderBy('id', $sortOrder)->paginate(5);
+        $data = $data->orderBy('id', $sortOrder)->paginate(10);
 
         // Get the distinct list of cities for filtering
         $kotaList = Mahasiswa::distinct('kota')->pluck('kota');

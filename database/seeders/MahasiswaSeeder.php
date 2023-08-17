@@ -19,7 +19,7 @@ class MahasiswaSeeder extends Seeder
 
         $cities = [];
 
-        foreach (range(1, 10) as $index) {
+        foreach (range(1, 25) as $index) {
             $city = count($cities) > 0 && rand(0, 1) === 0 ? $cities[array_rand($cities)] : $faker->city;
             $cities[] = $city;
 

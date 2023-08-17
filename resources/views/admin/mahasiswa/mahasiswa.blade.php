@@ -83,7 +83,7 @@
                                     <td>{{ $no }}</td>
                                     <td>{{ $item->nim }}</td>
                                     <td>{{ $item->nama }}</td>
-                                    <td>{{ $item->tanggal_lahir }}</td>
+                                    <td>{{ date('d-m-Y', strtotime($item->tanggal_lahir)) }}</td>
                                     <td>{{ $item->jenis_kelamin }}</td>
                                     <td>{{ $item->alamat }}</td>
                                     <td>{{ $item->kota }}</td>
