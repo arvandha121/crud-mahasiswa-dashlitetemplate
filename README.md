@@ -8,7 +8,7 @@
 </p>
 
 # ~~ DEMO PROJECT ~~
-<a href="https://testing.arief.cloud/" target="_blank"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Fpng%2F21971541-click-cursor-icon-with-click-here-button&psig=AOvVaw0q9DHH4eTydZkBuJIXUpyR&ust=1692368821109000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCPiCxaPz44ADFQAAAAAdAAAAABAE" style="weight: 10px"></a>
+<a href="https://testing.arief.cloud/" target="_blank">https://testing.arief.cloud/</a>
 
 # How to clone this project?
 ```bash
