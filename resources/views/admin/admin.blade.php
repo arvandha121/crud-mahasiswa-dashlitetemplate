@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         a {
             text-decoration: none;
@@ -100,6 +102,13 @@
                                         style="margin-left: -25px">
                                         <span class="nk-menu-icon"><i class="fa fa-key mr-2"></i></span>
                                         <span class="nk-menu-text">Administration</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('debug.index') }}" class="nk-menu-link d-flex align-items-center"
+                                        style="margin-left: -25px;">
+                                        <span class="nk-menu-icon"><i class="fas fa-wrench mr-2"></i></span>
+                                        <span class="nk-menu-text">Settings</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                             </ul><!-- .nk-menu -->
