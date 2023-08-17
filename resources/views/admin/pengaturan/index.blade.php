@@ -38,7 +38,7 @@
                         <div class="card-body text-center">
                             @if (!$appDebug)
                                 <div class="alert alert-warning" role="alert">
-                                    The Clear Cache and Config options are disabled when APP_DEBUG is set to false.
+                                    This options are disabled when APP_DEBUG is set to false.
                                 </div>
                             @endif
                             @if (session('success'))
@@ -46,18 +46,23 @@
                                     {{ session('success') }}
                                 </div>
                             @endif
-                            <p>Clear various caches and configurations:</p>
+                            <h5>Clear various caches and configurations:</h5>
                             <ul class="list-unstyled">
                                 <li><a href="{{ route('cache.clear') }}" class="btn btn-danger btn-block mt-2"
                                         {{ $appDebug ? '' : 'disabled' }}>Clear Cache</a></li>
                                 <li><a href="{{ route('config.clear') }}" class="btn btn-warning btn-block mt-2"
                                         {{ $appDebug ? '' : 'disabled' }}>Clear Config</a></li>
-                                <li><a href="{{ route('view.clear') }}" class="btn btn-info btn-block mt-2"
+                                <li><a href="{{ route('view.clear') }}" class="btn btn-primary btn-block mt-2"
                                         {{ $appDebug ? '' : 'disabled' }}>Clear View</a></li>
                                 <li><a href="{{ route('route.clear') }}" class="btn btn-success btn-block mt-2"
                                         {{ $appDebug ? '' : 'disabled' }}>Clear Route</a></li>
                                 <li><a href="{{ route('optimize.clear') }}" class="btn btn-secondary btn-block mt-2"
                                         {{ $appDebug ? '' : 'disabled' }}>Clear Optimize</a></li>
+                            </ul>
+                            <h5>Lainnya</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/routes" class="btn btn-info btn-block mt-2">See Routes</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
