@@ -39,7 +39,7 @@
                 <button class="btn mt-3">Login</button>
             </form>
             <div class="text-center fs-6">
-                Don't have accounts? <a href="/register">Sign up</a>
+                Don't have accounts? <a href="{{ route('register') }}">Sign up</a>
             </div>
         </div>
     </div>
