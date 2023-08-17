@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2023 at 11:54 AM
+-- Generation Time: Aug 17, 2023 at 12:12 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -60,16 +60,31 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id`, `nim`, `nama`, `tanggal_lahir`, `jenis_kelamin`, `alamat`, `kota`, `created_at`, `updated_at`) VALUES
-(1, '6245699993', 'Ana Halimah S.Pt', '1994-03-04', 'Perempuan', 'Ki. Labu No. 306, Palu 80611, Babel', 'Jayapura', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
-(2, '8821773683', 'Juli Zizi Wastuti', '2010-10-31', 'Perempuan', 'Kpg. Kalimantan No. 367, Lubuklinggau 20508, Bengkulu', 'Tarakan', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
-(3, '6142067870', 'Endah Susanti', '2022-05-18', 'Perempuan', 'Psr. Soekarno Hatta No. 653, Samarinda 75662, Babel', 'Tarakan', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
-(4, '6042669493', 'Wani Utami', '2013-03-30', 'Perempuan', 'Gg. Imam No. 169, Sabang 34191, Papua', 'Bima', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
-(5, '7880016752', 'Ulya Handayani', '1975-06-04', 'Laki-laki', 'Gg. PHH. Mustofa No. 739, Solok 89543, Pabar', 'Mojokerto', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
-(6, '8912353631', 'Irwan Artawan Napitupulu S.Gz', '2012-08-20', 'Laki-laki', 'Gg. R.M. Said No. 584, Ternate 16828, Bali', 'Madiun', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
-(7, '5593284462', 'Zaenab Riyanti S.T.', '1987-04-03', 'Perempuan', 'Kpg. Pintu Besar Selatan No. 595, Pematangsiantar 48673, Babel', 'Pariaman', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
-(8, '5950379900', 'Gabriella Alika Yuniar', '1994-11-18', 'Perempuan', 'Gg. Camar No. 920, Bukittinggi 89649, Jabar', 'Tidore Kepulauan', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
-(9, '5594083647', 'Naradi Tamba', '1999-08-27', 'Perempuan', 'Kpg. Arifin No. 768, Jambi 22511, Lampung', 'Jayapura', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
-(10, '5903006902', 'Farah Syahrini Hassanah S.Farm', '1988-12-26', 'Perempuan', 'Gg. Perintis Kemerdekaan No. 355, Binjai 71845, Sulsel', 'Madiun', '2023-08-17 02:52:07', '2023-08-17 02:52:07');
+(1, '5062537702', 'Mitra Hardiansyah', '1981-08-31', 'Laki-laki', 'Gg. Otto No. 895, Pagar Alam 19879, Bali', 'Bandar Lampung', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(2, '4115230027', 'Tari Tari Agustina S.Kom', '1987-05-12', 'Laki-laki', 'Dk. Gotong Royong No. 437, Palangka Raya 64679, Bengkulu', 'Bandar Lampung', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(3, '4168014540', 'Balidin Candrakanta Wibisono S.Ked', '1971-06-05', 'Perempuan', 'Ki. Nakula No. 812, Pasuruan 84322, Maluku', 'Tarakan', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(4, '9498995998', 'Umar Prasetya S.Pd', '1982-07-14', 'Laki-laki', 'Gg. Pahlawan No. 989, Parepare 83823, Bengkulu', 'Probolinggo', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(5, '1356905313', 'Ciaobella Tania Nasyidah S.I.Kom', '2011-07-03', 'Laki-laki', 'Dk. Baha No. 53, Sabang 12511, Sulut', 'Pangkal Pinang', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(6, '2721149190', 'Hesti Nasyiah S.E.I', '1996-01-29', 'Perempuan', 'Dk. Baja No. 551, Gorontalo 73439, Malut', 'Bandar Lampung', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(7, '7887722037', 'Lili Utami', '2022-05-24', 'Perempuan', 'Kpg. HOS. Cjokroaminoto (Pasirkaliki) No. 404, Sorong 11121, Banten', 'Bandar Lampung', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(8, '1531661250', 'Cinthia Aryani', '1979-09-10', 'Laki-laki', 'Dk. Rajawali Timur No. 275, Palembang 70572, Sulbar', 'Padangpanjang', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(9, '1327597067', 'Septi Maryati', '2008-10-24', 'Perempuan', 'Ds. Suryo No. 350, Bitung 56313, Kalbar', 'Bandar Lampung', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(10, '8089303478', 'Tantri Haryanti S.Pd', '2010-11-20', 'Laki-laki', 'Dk. Bak Air No. 238, Semarang 97654, Sulut', 'Tanjungbalai', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(11, '5564247623', 'Capa Okto Santoso', '1985-12-22', 'Perempuan', 'Psr. Babakan No. 498, Surakarta 74025, Sulut', 'Bandar Lampung', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(12, '2749203677', 'Teguh Sitompul', '1986-10-16', 'Perempuan', 'Gg. Cihampelas No. 171, Pekalongan 93146, Banten', 'Palembang', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(13, '7757029584', 'Kenes Nyoman Hidayanto', '1970-05-26', 'Perempuan', 'Ds. Yohanes No. 462, Gunungsitoli 94869, Riau', 'Bandar Lampung', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(14, '8679709387', 'Karya Januar', '2016-01-28', 'Perempuan', 'Jln. Fajar No. 582, Kediri 13511, Riau', 'Bandar Lampung', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(15, '4697960545', 'Siti Laksita S.Pd', '2010-08-21', 'Laki-laki', 'Gg. Suryo No. 158, Bau-Bau 27577, Sumut', 'Palembang', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(16, '0022475960', 'Latika Palastri', '1982-06-16', 'Perempuan', 'Jln. Baranangsiang No. 402, Bengkulu 24512, Banten', 'Palembang', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(17, '3848529049', 'Lili Syahrini Haryanti', '1999-04-18', 'Laki-laki', 'Jln. Bakhita No. 820, Banda Aceh 35245, Sumut', 'Binjai', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(18, '7813108685', 'Jamalia Hana Wastuti', '2023-02-26', 'Laki-laki', 'Ki. Astana Anyar No. 226, Payakumbuh 55978, Jatim', 'Bandar Lampung', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(19, '2433048156', 'Jarwi Salahudin', '2017-02-26', 'Laki-laki', 'Ds. Bappenas No. 612, Pangkal Pinang 15613, Papua', 'Makassar', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(20, '5544487329', 'Jaka Hardiansyah', '1995-10-19', 'Laki-laki', 'Jln. Perintis Kemerdekaan No. 73, Depok 51554, Jabar', 'Mataram', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(21, '7080317315', 'Cindy Wahyuni S.Ked', '1977-08-05', 'Laki-laki', 'Ki. Otista No. 963, Dumai 76561, Papua', 'Kotamobagu', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(22, '5299075855', 'Himawan Maryadi', '1986-04-02', 'Perempuan', 'Jln. Salatiga No. 764, Administrasi Jakarta Barat 14718, Papua', 'Tanjung Pinang', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(23, '0467295053', 'Lutfan Prakasa', '2006-01-18', 'Laki-laki', 'Dk. Babadan No. 573, Administrasi Jakarta Timur 44105, NTT', 'Palembang', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(24, '0838275955', 'Bajragin Darsirah Rajata', '1976-03-15', 'Laki-laki', 'Kpg. Sudiarto No. 130, Bandar Lampung 12822, Kepri', 'Tanjung Pinang', '2023-08-17 03:02:36', '2023-08-17 03:02:36'),
+(25, '3112573880', 'Maida Rahayu S.IP', '1997-04-15', 'Laki-laki', 'Ds. Ujung No. 109, Semarang 81709, Kalbar', 'Depok', '2023-08-17 03:02:36', '2023-08-17 03:02:36');
 
 -- --------------------------------------------------------
 
@@ -88,11 +103,11 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(56, '2014_10_12_000000_create_users_table', 1),
-(57, '2014_10_12_100000_create_password_resets_table', 1),
-(58, '2019_08_19_000000_create_failed_jobs_table', 1),
-(59, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(60, '2023_07_24_031620_create_mahasiswa_table', 1);
+(61, '2014_10_12_000000_create_users_table', 1),
+(62, '2014_10_12_100000_create_password_resets_table', 1),
+(63, '2019_08_19_000000_create_failed_jobs_table', 1),
+(64, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(65, '2023_07_24_031620_create_mahasiswa_table', 1);
 
 -- --------------------------------------------------------
 
@@ -146,8 +161,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nama`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', '$2y$10$nZa3nN14rZy6ftM7Hz8m6eVqL3pM22cAIzKeADDg4QXEiyTLGmjWy', NULL, NULL, NULL),
-(2, 'nauvan', 'nauvan121@gmail.com', '$2y$10$iLF4yTNG9soqt6OOtF6.QOq7yE/RpfRM0.rlJhTIHqVKs3LaJT4/.', NULL, NULL, NULL);
+(1, 'admin', 'admin@gmail.com', '$2y$10$bMb8DnYdUbEOKQauHMrv9ucs5zB2OPty2Pd3/wdKdBmSflFm5fKvG', NULL, NULL, NULL),
+(2, 'nauvan', 'nauvan121@gmail.com', '$2y$10$aFQ4OG1rGewhIX0sf4R7zOkWNxvOYuLGzJJhZmJMNx1imoVWqa4Ee', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -207,13 +222,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

@@ -66,4 +66,5 @@ Route::group(['prefix' => 'clear', 'middleware' => 'debug'], function () {
     Route::get('view', [CacheClearController::class, 'clearView']);
     Route::get('route', [CacheClearController::class, 'clearRoute']);
     Route::get('optimize', [CacheClearController::class, 'clearOptimize']);
+    Route::get('/database', [CacheClearController::class, 'refreshDatabase'])->name('refresh.database');
 });
