@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2023 at 11:43 AM
+-- Generation Time: Aug 17, 2023 at 11:54 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -60,16 +60,16 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id`, `nim`, `nama`, `tanggal_lahir`, `jenis_kelamin`, `alamat`, `kota`, `created_at`, `updated_at`) VALUES
-(1, '5737558006', 'Raden Warsa Rajasa', '2013-03-13', 'Laki-laki', 'Jr. Adisumarmo No. 279, Bitung 60958, NTB', 'Prabumulih', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
-(2, '0508062486', 'Cici Wastuti', '1974-08-04', 'Perempuan', 'Psr. Taman No. 812, Tanjung Pinang 45880, Kaltara', 'Administrasi Jakarta Utara', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
-(3, '1845474424', 'Wulan Wahyuni S.Farm', '1983-04-29', 'Laki-laki', 'Jr. M.T. Haryono No. 33, Banjar 96213, Sultra', 'Subulussalam', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
-(4, '0948788627', 'Faizah Widiastuti', '1977-01-30', 'Perempuan', 'Gg. Cut Nyak Dien No. 225, Pematangsiantar 64692, DKI', 'Ternate', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
-(5, '5527028785', 'Siti Maida Novitasari S.Farm', '2014-11-07', 'Perempuan', 'Ds. Pacuan Kuda No. 419, Bekasi 48530, Lampung', 'Ternate', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
-(6, '5921203989', 'Margana Tasdik Pradana S.T.', '2003-07-26', 'Laki-laki', 'Kpg. Sukabumi No. 734, Singkawang 82888, Bengkulu', 'Sungai Penuh', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
-(7, '7217615783', 'Sari Halimah S.Kom', '1977-05-01', 'Laki-laki', 'Ds. Hasanuddin No. 235, Palembang 81775, Malut', 'Sibolga', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
-(8, '9069015374', 'Dadap Rajata S.Pt', '1975-11-04', 'Laki-laki', 'Ds. Baung No. 37, Bogor 61825, Kalteng', 'Sibolga', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
-(9, '3232592224', 'Muni Firmansyah', '1977-01-07', 'Perempuan', 'Psr. Tubagus Ismail No. 361, Kediri 90407, Bali', 'Sibolga', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
-(10, '5259012692', 'Warta Ramadan', '1978-01-01', 'Laki-laki', 'Ds. Tentara Pelajar No. 712, Metro 14260, Papua', 'Mataram', '2023-08-17 02:40:08', '2023-08-17 02:40:08');
+(1, '6245699993', 'Ana Halimah S.Pt', '1994-03-04', 'Perempuan', 'Ki. Labu No. 306, Palu 80611, Babel', 'Jayapura', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
+(2, '8821773683', 'Juli Zizi Wastuti', '2010-10-31', 'Perempuan', 'Kpg. Kalimantan No. 367, Lubuklinggau 20508, Bengkulu', 'Tarakan', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
+(3, '6142067870', 'Endah Susanti', '2022-05-18', 'Perempuan', 'Psr. Soekarno Hatta No. 653, Samarinda 75662, Babel', 'Tarakan', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
+(4, '6042669493', 'Wani Utami', '2013-03-30', 'Perempuan', 'Gg. Imam No. 169, Sabang 34191, Papua', 'Bima', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
+(5, '7880016752', 'Ulya Handayani', '1975-06-04', 'Laki-laki', 'Gg. PHH. Mustofa No. 739, Solok 89543, Pabar', 'Mojokerto', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
+(6, '8912353631', 'Irwan Artawan Napitupulu S.Gz', '2012-08-20', 'Laki-laki', 'Gg. R.M. Said No. 584, Ternate 16828, Bali', 'Madiun', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
+(7, '5593284462', 'Zaenab Riyanti S.T.', '1987-04-03', 'Perempuan', 'Kpg. Pintu Besar Selatan No. 595, Pematangsiantar 48673, Babel', 'Pariaman', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
+(8, '5950379900', 'Gabriella Alika Yuniar', '1994-11-18', 'Perempuan', 'Gg. Camar No. 920, Bukittinggi 89649, Jabar', 'Tidore Kepulauan', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
+(9, '5594083647', 'Naradi Tamba', '1999-08-27', 'Perempuan', 'Kpg. Arifin No. 768, Jambi 22511, Lampung', 'Jayapura', '2023-08-17 02:52:07', '2023-08-17 02:52:07'),
+(10, '5903006902', 'Farah Syahrini Hassanah S.Farm', '1988-12-26', 'Perempuan', 'Gg. Perintis Kemerdekaan No. 355, Binjai 71845, Sulsel', 'Madiun', '2023-08-17 02:52:07', '2023-08-17 02:52:07');
 
 -- --------------------------------------------------------
 
@@ -88,11 +88,11 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(46, '2014_10_12_000000_create_users_table', 1),
-(47, '2014_10_12_100000_create_password_resets_table', 1),
-(48, '2019_08_19_000000_create_failed_jobs_table', 1),
-(49, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(50, '2023_07_24_031620_create_mahasiswa_table', 1);
+(56, '2014_10_12_000000_create_users_table', 1),
+(57, '2014_10_12_100000_create_password_resets_table', 1),
+(58, '2019_08_19_000000_create_failed_jobs_table', 1),
+(59, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(60, '2023_07_24_031620_create_mahasiswa_table', 1);
 
 -- --------------------------------------------------------
 
@@ -146,8 +146,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nama`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', '$2y$10$6.fKBqIAqILcWe4uAVqgV.BwbF8c5HdcZ.D7.aqiZYfxoRsyI3UPq', NULL, NULL, NULL),
-(2, 'nauvan', 'nauvan121@gmail.com', '$2y$10$mqy1yZCRiybVAfuphwdujOPpUQzPkTbYwGEVKg0y2Ism1QyagQ7rO', NULL, NULL, NULL);
+(1, 'admin', 'admin@gmail.com', '$2y$10$nZa3nN14rZy6ftM7Hz8m6eVqL3pM22cAIzKeADDg4QXEiyTLGmjWy', NULL, NULL, NULL),
+(2, 'nauvan', 'nauvan121@gmail.com', '$2y$10$iLF4yTNG9soqt6OOtF6.QOq7yE/RpfRM0.rlJhTIHqVKs3LaJT4/.', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -213,7 +213,7 @@ ALTER TABLE `mahasiswa`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
