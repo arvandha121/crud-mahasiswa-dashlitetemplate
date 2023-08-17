@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 16, 2023 at 06:44 PM
+-- Generation Time: Aug 17, 2023 at 11:43 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -60,13 +60,16 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id`, `nim`, `nama`, `tanggal_lahir`, `jenis_kelamin`, `alamat`, `kota`, `created_at`, `updated_at`) VALUES
-(1, '2041720134', 'Arief Nauvan Ramadha', '2001-11-20', 'Laki-laki', 'Kauman', 'Nganjuk', '2023-08-16 09:44:13', NULL),
-(2, '2041720130', 'Ahmad Rafif Alaudin', '2002-01-12', 'Laki-laki', 'Pesantren', 'Kediri', '2023-08-16 09:44:13', NULL),
-(3, '2041720010', 'Taufik Anwar', '2001-08-15', 'Laki-laki', 'Dau', 'Malang', '2023-08-16 09:44:13', NULL),
-(4, '2041720098', 'Alun Mega', '2001-03-10', 'Perempuan', 'Rejoso', 'Nganjuk', '2023-08-16 09:44:13', NULL),
-(5, '2041720016', 'Atmayanti', '2003-03-15', 'Perempuan', 'Ds Bandung', 'Tulungagung', '2023-08-16 09:44:13', NULL),
-(6, '2041720015', 'Muchammad Rizal Gusnanda Atmaja', '2003-10-12', 'Laki-laki', 'Ds Dawuhan', 'Trenggalek', '2023-08-16 09:44:13', NULL),
-(7, '2041720100', 'Venny Meida Hersianty', '2002-01-11', 'Perempuan', 'Lowokwaru', 'Malang', '2023-08-16 09:44:13', NULL);
+(1, '5737558006', 'Raden Warsa Rajasa', '2013-03-13', 'Laki-laki', 'Jr. Adisumarmo No. 279, Bitung 60958, NTB', 'Prabumulih', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
+(2, '0508062486', 'Cici Wastuti', '1974-08-04', 'Perempuan', 'Psr. Taman No. 812, Tanjung Pinang 45880, Kaltara', 'Administrasi Jakarta Utara', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
+(3, '1845474424', 'Wulan Wahyuni S.Farm', '1983-04-29', 'Laki-laki', 'Jr. M.T. Haryono No. 33, Banjar 96213, Sultra', 'Subulussalam', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
+(4, '0948788627', 'Faizah Widiastuti', '1977-01-30', 'Perempuan', 'Gg. Cut Nyak Dien No. 225, Pematangsiantar 64692, DKI', 'Ternate', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
+(5, '5527028785', 'Siti Maida Novitasari S.Farm', '2014-11-07', 'Perempuan', 'Ds. Pacuan Kuda No. 419, Bekasi 48530, Lampung', 'Ternate', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
+(6, '5921203989', 'Margana Tasdik Pradana S.T.', '2003-07-26', 'Laki-laki', 'Kpg. Sukabumi No. 734, Singkawang 82888, Bengkulu', 'Sungai Penuh', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
+(7, '7217615783', 'Sari Halimah S.Kom', '1977-05-01', 'Laki-laki', 'Ds. Hasanuddin No. 235, Palembang 81775, Malut', 'Sibolga', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
+(8, '9069015374', 'Dadap Rajata S.Pt', '1975-11-04', 'Laki-laki', 'Ds. Baung No. 37, Bogor 61825, Kalteng', 'Sibolga', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
+(9, '3232592224', 'Muni Firmansyah', '1977-01-07', 'Perempuan', 'Psr. Tubagus Ismail No. 361, Kediri 90407, Bali', 'Sibolga', '2023-08-17 02:40:08', '2023-08-17 02:40:08'),
+(10, '5259012692', 'Warta Ramadan', '1978-01-01', 'Laki-laki', 'Ds. Tentara Pelajar No. 712, Metro 14260, Papua', 'Mataram', '2023-08-17 02:40:08', '2023-08-17 02:40:08');
 
 -- --------------------------------------------------------
 
@@ -85,11 +88,11 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(26, '2014_10_12_000000_create_users_table', 1),
-(27, '2014_10_12_100000_create_password_resets_table', 1),
-(28, '2019_08_19_000000_create_failed_jobs_table', 1),
-(29, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(30, '2023_07_24_031620_create_mahasiswa_table', 1);
+(46, '2014_10_12_000000_create_users_table', 1),
+(47, '2014_10_12_100000_create_password_resets_table', 1),
+(48, '2019_08_19_000000_create_failed_jobs_table', 1),
+(49, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(50, '2023_07_24_031620_create_mahasiswa_table', 1);
 
 -- --------------------------------------------------------
 
@@ -143,8 +146,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nama`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', '$2y$10$2zxskxqysv7ldR8t.fjoL.cZMHXvaniC5MphzOft1A0JrUZ7Ay2ba', NULL, NULL, NULL),
-(2, 'nauvan', 'nauvan121@gmail.com', '$2y$10$QccAdMmwkJaoJh9xS70HHOQ8H0tNS4Gu/RViY5vltR8z7G4jZBEoq', NULL, NULL, NULL);
+(1, 'admin', 'admin@gmail.com', '$2y$10$6.fKBqIAqILcWe4uAVqgV.BwbF8c5HdcZ.D7.aqiZYfxoRsyI3UPq', NULL, NULL, NULL),
+(2, 'nauvan', 'nauvan121@gmail.com', '$2y$10$mqy1yZCRiybVAfuphwdujOPpUQzPkTbYwGEVKg0y2Ism1QyagQ7rO', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -204,13 +207,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
