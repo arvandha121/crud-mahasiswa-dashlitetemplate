@@ -83,15 +83,15 @@
                                             <i class="fa fa-angle-down"></i>
                                         </span>
                                     </a>
-                                    <ul class="nk-menu-sub">
+                                    <ul class="nk-menu-sub nk-toggled"> <!-- Add the nk-toggled class here -->
                                         <li class="nk-menu-item">
                                             <a href="/admin/data/mahasiswa" class="nk-menu-link"
-                                                style="margin-left: -30px">
+                                                style="margin-left: -40px">
                                                 <span class="nk-menu-text">Mahasiswa</span>
                                             </a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href="/admin/data/kota" class="nk-menu-link" style="margin-left: -30px">
+                                            <a href="/admin/data/kota" class="nk-menu-link" style="margin-left: -40px">
                                                 <span class="nk-menu-text">Kota</span>
                                             </a>
                                         </li>
@@ -105,12 +105,19 @@
                                     </a>
                                 </li>
                                 <li class="nk-menu-item">
-                                    <a href="{{ route('debug.index') }}" class="nk-menu-link d-flex align-items-center"
-                                        style="margin-left: -25px;">
-                                        <span class="nk-menu-icon"><i class="fas fa-wrench mr-2"></i></span>
-                                        <span class="nk-menu-text">Settings</span>
+                                    <a href="{{ route('mail-config') }}" class="nk-menu-link d-flex align-items-center"
+                                        style="margin-left: -25px">
+                                        <span class="nk-menu-icon"><i class="fa fa-envelope mr-2"></i></span>
+                                        <span class="nk-menu-text">Mail Configuration</span>
                                     </a>
-                                </li><!-- .nk-menu-item -->
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('debug.index') }}"
+                                        class="nk-menu-link d-flex align-items-center" style="margin-left: -25px">
+                                        <span class="nk-menu-icon"><i class="fa fa-bug mr-2"></i></span>
+                                        <span class="nk-menu-text">Debug</span>
+                                    </a>
+                                </li>
                             </ul><!-- .nk-menu -->
                         </div><!-- .nk-sidebar-menu -->
                     </div><!-- .nk-sidebar-content -->
@@ -202,9 +209,6 @@
     <!-- JavaScript -->
     <script src="{{ asset('/js/bundle.js?ver=3.2.0') }}"></script>
     <script src="{{ asset('/js/scripts.js?ver=3.2.0') }}"></script>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <script src="{{ asset('/js/showAll.js') }}"></script>
     <script src="{{ asset('/js/timeScript.js') }}"></script>

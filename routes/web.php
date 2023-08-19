@@ -9,13 +9,9 @@ use App\Http\Controllers\CacheClearController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\MailConfigController;
 use App\Http\Controllers\Auth\RegisterController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Auth\Events\PasswordReset;
-use Illuminate\Support\Facades\Hash;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,10 +74,13 @@ Route::group(['middleware' => ['web']], function () {
     
         Route::resource('/admin/administration', AdministrationController::class)->except('show');
     
-        Route::group(['prefix' => 'admin/debug', 'as' => 'debug.'], function () {
+        Route::group(['prefix' => 'admin/settings/debug', 'as' => 'debug.'], function () {
             Route::get('/', [DebugController::class, 'index'])->name('index');
             Route::post('/', [DebugController::class, 'update'])->name('update');
         });
+
+        Route::get('/admin/settings/mail-config', [MailConfigController::class, 'index'])->name('mail-config');
+        Route::post('/admin/settings/mail-config/update', [MailConfigController::class, 'update'])->name('mail-config.update');
     
         Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
     });

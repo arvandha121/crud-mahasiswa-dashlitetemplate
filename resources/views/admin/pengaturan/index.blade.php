@@ -30,6 +30,8 @@
                         </div>
                     </div>
 
+                    <div class="card mt-4"></div>
+
                     <!-- Clear Cache and Config Card -->
                     <div class="card mt-4">
                         <div class="card-header">
@@ -61,7 +63,7 @@
                             </ul>
                             <h5>Lainnya</h5>
                             <ul class="list-unstyled">
-                                <li><a href="/routes" class="btn btn-info btn-block mt-2">See Routes</a>
+                                <li><a href="/routes" class="btn btn-info btn-block mt-2" target="_blank">See Routes</a>
                                 </li>
                             </ul>
                         </div>
