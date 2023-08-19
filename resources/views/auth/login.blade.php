@@ -2,12 +2,12 @@
 
 @section('content-auth')
     <div class="container">
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
         <div class="wrapper">
+            @if (session()->has('status'))
+                <div class="alert alert-success">
+                    {{ session()->get('status') }}
+                </div>
+            @endif
             @if (session('error'))
                 <div class="alert alert-danger">
                     {{ session('error') }}
@@ -40,6 +40,9 @@
             </form>
             <div class="text-center fs-6">
                 Don't have accounts? <a href="{{ route('register') }}">Sign up</a>
+            </div>
+            <div class="text-center fs-6">
+                Forgot password? <a href="/forgot-password">Forgot</a>
             </div>
         </div>
     </div>

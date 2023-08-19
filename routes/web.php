@@ -7,7 +7,15 @@ use App\Http\Controllers\AdministrationController;
 use App\Http\Controllers\DebugController;
 use App\Http\Controllers\CacheClearController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\Auth\RegisterController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Support\Facades\Hash;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,16 +28,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Welcome Page
 Route::get('/laravel', function () {
     return view('welcome');
 });
 
+// Authentication Routes
 Route::redirect('/', '/login');
 Route::get('/login', [SessionController::class, 'index'])->name('login');
 Route::post('/login/check', [SessionController::class, 'login'])->name('login.check');
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
 
-Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
+// Forgot Password Routes
+Route::prefix('forgot-password')->middleware('guest')->group(function () {
+    Route::get('/', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+    Route::post('/', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+});
+
+// Reset Password Routes
+Route::prefix('reset-password')->middleware('guest')->group(function () {
+    Route::get('/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+    Route::post('/', [ResetPasswordController::class, 'reset'])->name('password.update');
+});
 
 Route::group(['middleware' => ['web']], function () {
     Route::group(['middleware' => ['App\Http\Middleware\IsLogin']], function () {
@@ -66,7 +87,8 @@ Route::group(['middleware' => ['web']], function () {
     });
 });
 
-Route::group(['prefix' => 'clear', 'middleware' => 'debug'], function () {
+// Debug Routes
+Route::prefix('clear')->middleware('debug')->group(function () {
     Route::get('cache', [CacheClearController::class, 'clearCache'])->name('cache.clear');
     Route::get('config', [CacheClearController::class, 'clearConfig'])->name('config.clear');
     Route::get('view', [CacheClearController::class, 'clearView'])->name('view.clear');
