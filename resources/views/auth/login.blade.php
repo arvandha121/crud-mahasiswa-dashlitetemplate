@@ -22,22 +22,24 @@
             </div>
             <form class="p-3 mt-3" method="POST" action="{{ url('/login/check') }}">
                 @csrf
-                @error('email')
+                @error('identity')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-field d-flex align-items-center">
-                    <input type="text" name="email" id="email" placeholder="email" value="admin@gmail.com">
+                    <input type="text" name="identity" id="identity" placeholder="Email or Name"
+                        value="{{ old('identity') }}">
                 </div>
                 @error('password')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-field d-flex align-items-center">
-                    <input type="password" name="password" id="password" placeholder="Password" value="Password121">
+                    <input type="password" name="password" id="password" placeholder="Password">
                 </div>
                 <input style="margin-left: 4px" type="checkbox" id="showPassword">
                 <label style="margin-left: 4px; margin-bottom: 4px" for="showPassword">Lihat Password</label>
                 <button class="btn mt-3">Login</button>
             </form>
+
             <div class="text-center fs-6">
                 Don't have accounts? <a href="{{ route('register') }}">Sign up</a>
             </div>
