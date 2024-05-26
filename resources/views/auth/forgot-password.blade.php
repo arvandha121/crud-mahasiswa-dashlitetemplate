@@ -17,6 +17,11 @@
                     </ul>
                 </div>
             @endif
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
             <div class="logo">
                 <img src="https://akupintar.id/documents/20143/0/LOGO+POLITEKNIK+NEGERI+MALANG.png/949b5c7d-1fd2-121d-c1ad-f275911cb955?version=1.0&t=1519104037264&imageThumbnail=1"
                     alt="">
@@ -34,6 +39,11 @@
                 </div>
                 <button class="btn mt-3" type="submit">Request Reset</button>
             </form>
+            <div class="text-center fs-6 mt-3">
+                <a href="{{ route('whatsapp-form') }}" style="color: #25D366">
+                    <i class="fab fa-whatsapp"></i> Reset via WhatsApp
+                </a>
+            </div>
             <div class="text-center fs-6 mt-3">
                 <a href="/login">Back to login</a>
             </div>

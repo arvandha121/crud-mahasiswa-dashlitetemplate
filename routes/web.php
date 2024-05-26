@@ -10,6 +10,8 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\MailConfigController;
+use App\Http\Controllers\WhatsAppResetController;
+use App\Http\Controllers\ResetController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,6 +50,17 @@ Route::prefix('reset-password')->middleware('guest')->group(function () {
     Route::post('/', [ResetPasswordController::class, 'reset'])->name('password.update');
 });
 
+Route::prefix('reset-password-whatsapp')->middleware('guest')->group(function () {
+    Route::get('/', [ResetController::class, 'reset_password'])->name('reset-password');
+    Route::post('/proses', [ResetController::class, 'reset_password_proses'])->name('reset-password-proses');
+    Route::post('/proses', [Auth\ResetController::class, 'reset_password_proses'])->name('reset-password-proses');
+});
+
+Route::prefix('whatsapp')->middleware('guest')->group(function () {
+    Route::get('/reset', [WhatsAppResetController::class, 'showWhatsAppForm'])->name('whatsapp-form');
+    Route::post('/reset/send', [WhatsAppResetController::class, 'sendWhatsAppResetLink'])->name('send-whatsapp-reset-link');
+});
+
 Route::group(['middleware' => ['web']], function () {
     Route::group(['middleware' => ['App\Http\Middleware\IsLogin']], function () {
         Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
@@ -61,8 +74,8 @@ Route::group(['middleware' => ['web']], function () {
             Route::delete('/{mahasiswa}', [MahasiswaController::class, 'destroy'])->name('destroy');
             Route::get('/{mahasiswa}', [MahasiswaController::class, 'show'])->name('show'); // Add this line
         });
-        
     
+
         Route::get('/cetak_pdf', [MahasiswaController::class, 'cetak_pdf'])->name('cetak_pdf');
         Route::get('/cetak_excel', [MahasiswaController::class, 'cetak_excel'])->name('cetak_excel');
     
@@ -81,7 +94,7 @@ Route::group(['middleware' => ['web']], function () {
 
         Route::get('/admin/settings/mail-config', [MailConfigController::class, 'index'])->name('mail-config');
         Route::post('/admin/settings/mail-config/update', [MailConfigController::class, 'update'])->name('mail-config.update');
-    
+
         Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
     });
 });
